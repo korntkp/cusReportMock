@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Fault_Report Mockup</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="banner">Service Performance Report</string>
+    <string name="logout">Logout</string>
+
+    <string name="report_Fault">Report Fault</string>
+    <string name="report_Avail">Report Availability</string>
+    
+    <string name="information">Information</string>
+    <string name="Name">Username :</string>
+    <string name="Privilege">Privilege :</string>
+    <string name="create_Date">Create Date :</string>
+    <string name="exp_Date">Expire Date :</string>
+
+    <string name="download_Manual">คู่มือสำหรับผู้ใช้บริการ</string>
+    
+    <string name="banner_sitemap">Sitemap</string>
+    <string name="banner_copyr">Copyright Notice</string>
+    <string name="banner_privacy">Privacy Policy</string>
+
+
+    <string name="login_username">Username</string>
+    <string name="login_password">Password</string>
+    <string name="login_login_but">Login</string>
+    <string name="login_question">ส่งคำถาม/คำติชม</string>
+</resources>
