@@ -7,23 +7,27 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
 
     TextView username_TextV;
     Button logout_Butt;
+    String username = "test";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        Toast.makeText(getApplicationContext(), "sdfghjkl;", Toast.LENGTH_LONG).show();
         Intent intent = getIntent();
-        String username = intent.getStringExtra("Username");
+        username = intent.getStringExtra("Username");
         username_TextV = (TextView) findViewById(R.id.username_act_main);
         username_TextV.setText(username_TextV.getText().toString() + username);
+
     }
 
     @Override
@@ -53,4 +57,17 @@ public class MainActivity extends ActionBarActivity {
         startActivity(objIntentLogout);
         finish();
     }
+
+    public void goFaultRep(View view) {
+        //Toast.makeText(getApplicationContext(), "asdf;", Toast.LENGTH_LONG).show();
+        Intent objIntent1 = new Intent(MainActivity.this, FaultRepActivity.class);
+
+        TextView usern_textv = (TextView) findViewById(R.id.username_act_main);
+        String usernameFault = usern_textv.getText().toString();
+        objIntent1.putExtra("UsernameFault", usernameFault);
+
+        startActivity(objIntent1);
+        finish();
+    }
+
 }

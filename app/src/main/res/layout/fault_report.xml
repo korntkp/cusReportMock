@@ -33,7 +33,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-       >
+        >
 
 
         <LinearLayout
@@ -41,28 +41,6 @@
             android:layout_height="fill_parent"
             android:orientation="vertical" >
 
-        <LinearLayout
-            android:id="@+id/LinearLayout02"
-            android:layout_height="fill_parent"
-            android:layout_width="fill_parent"
-            android:layout_alignParentBottom="true">
-
-                <Button
-                    android:id="@+id/report_Fault_Button"
-                    android:text="@string/report_Fault"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:onClick="goFaultRep"
-                    android:layout_weight="1"/>
-
-                <Button
-                    android:id="@+id/report_Avail_Button"
-                    android:text="@string/report_Avail"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
-
-            </LinearLayout>
 
             <TextView
                 android:text="@string/information"
@@ -72,26 +50,11 @@
                 android:layout_height="wrap_content"
                 android:gravity="center" />
             <TextView
-                android:id="@+id/username_act_main"
-                android:text="@string/Name"
-                android:textSize="30sp"
+                android:textSize="20sp"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content" />
-            <TextView
-                android:text="@string/Privilege"
-                android:textSize="30sp"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" />
-            <TextView
-                android:text="@string/create_Date"
-                android:textSize="30sp"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" />
-            <TextView
-                android:text="@string/exp_Date"
-                android:textSize="30sp"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent" />
+                android:layout_height="wrap_content"
+                android:id="@+id/fault_username"
+                android:text="Username :"/>
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -131,3 +94,4 @@
 
 
 </LinearLayout>
+

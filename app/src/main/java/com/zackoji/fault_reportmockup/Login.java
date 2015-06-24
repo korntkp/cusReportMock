@@ -22,7 +22,7 @@ public class Login extends ActionBarActivity {
     }
 
 
-    public void nextPage(View view) {
+    public void chkLogin(View view) {
         Intent objIntent = new Intent(Login.this, MainActivity.class);
 
         EditText usern_edittext = (EditText) findViewById(R.id.usern_edittext);
