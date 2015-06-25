@@ -1,8 +1,12 @@
 package com.zackoji.fault_reportmockup;
 
 import android.content.Intent;
+import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,11 +16,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+
+
+
 public class MainActivity extends ActionBarActivity {
 
     TextView username_TextV;
     Button logout_Butt;
     String username = "test";
+    CoordinatorLayout rootLayout;
+    CollapsingToolbarLayout collapsingToolbarLayout;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +38,18 @@ public class MainActivity extends ActionBarActivity {
         username_TextV = (TextView) findViewById(R.id.username_act_main);
         username_TextV.setText(username_TextV.getText().toString() + username);
 
+        initInstances();
+
+    }
+
+    private void initInstances() {
+        rootLayout = (CoordinatorLayout) findViewById(R.id.rootLayout);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsingToolbarLayout);
+        collapsingToolbarLayout.setTitle("Service Performance Online");
     }
 
     @Override
