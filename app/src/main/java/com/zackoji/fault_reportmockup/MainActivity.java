@@ -3,6 +3,7 @@ package com.zackoji.fault_reportmockup;
 import android.content.Intent;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.TabLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -19,7 +20,7 @@ import android.widget.Toast;
 
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity {
 
     TextView username_TextV;
     Button logout_Butt;
@@ -27,19 +28,19 @@ public class MainActivity extends ActionBarActivity {
     CoordinatorLayout rootLayout;
     CollapsingToolbarLayout collapsingToolbarLayout;
     Toolbar toolbar;
+    TabLayout tabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toast.makeText(getApplicationContext(), "sdfghjkl;", Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(), "sdfghjkl;", Toast.LENGTH_LONG).show();
         Intent intent = getIntent();
         username = intent.getStringExtra("Username");
         username_TextV = (TextView) findViewById(R.id.username_act_main);
         username_TextV.setText(username_TextV.getText().toString() + username);
 
         initInstances();
-
     }
 
     private void initInstances() {
@@ -47,9 +48,15 @@ public class MainActivity extends ActionBarActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+/*
         collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsingToolbarLayout);
         collapsingToolbarLayout.setTitle("Service Performance Online");
+*/
+        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+        tabLayout.addTab(tabLayout.newTab().setText("Info"));
+        tabLayout.addTab(tabLayout.newTab().setText("Month 1"));
+        tabLayout.addTab(tabLayout.newTab().setText("Month 2"));
+        tabLayout.addTab(tabLayout.newTab().setText("Month 3"));
     }
 
     @Override
@@ -78,6 +85,7 @@ public class MainActivity extends ActionBarActivity {
         Intent objIntentLogout = new Intent(MainActivity.this, Login.class);
         startActivity(objIntentLogout);
         finish();
+
     }
 
     public void goFaultRep(View view) {
@@ -89,7 +97,7 @@ public class MainActivity extends ActionBarActivity {
         objIntent1.putExtra("UsernameFault", usernameFault);
 
         startActivity(objIntent1);
-        finish();
+        //finish();
     }
 
 }

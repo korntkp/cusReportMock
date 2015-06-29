@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,7 +12,7 @@ import android.widget.EditText;
 /**
  * Created by Zackoji on 18/6/2558.
  */
-public class Login extends ActionBarActivity {
+public class Login extends AppCompatActivity {
 
     String username;
 
