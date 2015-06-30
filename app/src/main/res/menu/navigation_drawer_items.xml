@@ -2,21 +2,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="all">
         <item
-            android:id="@+id/navItem1"
+            android:id="@+id/navItem1_Fault_Re"
             android:icon="@drawable/ic_action_location_found_dark"
             android:title="Fault Report"/>
         <item
-            android:id="@+id/navItem2"
+            android:id="@+id/navItem2_Avai_Re"
             android:icon="@drawable/ic_action_location_found_dark"
-            android:title="Avsilability Report"/>
+            android:title="Availability Report"/>
 
         <item
-            android:id="@+id/navItem3"
+            android:id="@+id/navItem3_Pro"
             android:icon="@drawable/ic_action_location_found_dark"
             android:title="Profile"/>
 
         <item
-            android:id="@+id/navItem4"
+            android:id="@+id/navItem4_Log"
             android:icon="@drawable/ic_action_location_found_dark"
             android:title="Logout"/>
     </group>

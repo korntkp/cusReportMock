@@ -3,9 +3,12 @@ package com.zackoji.fault_reportmockup;
 import android.content.Intent;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -24,9 +27,12 @@ public class MainActivity extends AppCompatActivity {
 
     TextView username_TextV;
     String username = "test";
+
     CoordinatorLayout rootLayout;
     Toolbar toolbar;
     TabLayout tabLayout;
+    NavigationView navigationView;
+    DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,20 +44,92 @@ public class MainActivity extends AppCompatActivity {
         username_TextV = (TextView) findViewById(R.id.username_act_main);
         username_TextV.setText(username_TextV.getText().toString() + username);
 
+        navigationView = (NavigationView) findViewById(R.id.navigation);
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem menuItem) {
+                //Toast.makeText(getApplicationContext(), menuItem.getItemId(), Toast.LENGTH_LONG).show();
+
+                //Checking if the item is in checked state or not, if not make it in checked state
+                if(menuItem.isChecked()) {
+                    menuItem.setChecked(false);
+                    Toast.makeText(getApplicationContext(),"Set Checked -> False",Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    menuItem.setChecked(true);
+                    Toast.makeText(getApplicationContext(),"Set Checked -> True",Toast.LENGTH_SHORT).show();
+                }
+
+                //Closing drawer on item click
+                drawerLayout.closeDrawers();
+
+                //Check to see which item was being clicked and perform appropriate action
+                switch (menuItem.getItemId()){
+                    case R.id.navItem1_Fault_Re:
+                        //Toast.makeText(getApplicationContext(),"Fault Report",Toast.LENGTH_SHORT).show();
+                        return true;
+
+                    case R.id.navItem2_Avai_Re:
+                        //Toast.makeText(getApplicationContext(),"Availability Report",Toast.LENGTH_SHORT).show();
+                        return true;
+
+                    case R.id.navItem3_Pro:
+                        //Toast.makeText(getApplicationContext(),"Profile",Toast.LENGTH_SHORT).show();
+                        return true;
+
+                    case R.id.navItem4_Log:
+                        //Toast.makeText(getApplicationContext(),"Logout",Toast.LENGTH_SHORT).show();
+                        Intent objIntentLogout = new Intent(MainActivity.this, Login.class);
+                        startActivity(objIntentLogout);
+                        finish();
+                        return true;
+
+                    default:
+                        Toast.makeText(getApplicationContext(),"Somethings Wrong",Toast.LENGTH_SHORT).show();
+                        return true;
+                }
+            }
+    });
+
         initInstances();
+        initToolbar();
+
+    }
+
+    private void initToolbar() {
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
     }
 
     private void initInstances() {
         rootLayout = (CoordinatorLayout) findViewById(R.id.rootLayout);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
-        tabLayout.addTab(tabLayout.newTab().setText("Info"));
         tabLayout.addTab(tabLayout.newTab().setText("Month 1"));
         tabLayout.addTab(tabLayout.newTab().setText("Month 2"));
         tabLayout.addTab(tabLayout.newTab().setText("Month 3"));
+
+        // Initializing Drawer Layout and ActionBarToggle
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.openDrawer, R.string.closeDrawer){
+
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                // Code here will be triggered once the drawer closes as we dont want anything to happen so we leave this blank
+                super.onDrawerClosed(drawerView);
+            }
+
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                // Code here will be triggered once the drawer open as we dont want anything to happen so we leave this blank
+
+                super.onDrawerOpened(drawerView);
+            }
+        };
+
+        //Setting the actionbarToggle to drawer layout
+        drawerLayout.setDrawerListener(actionBarDrawerToggle);
     }
 
     public void logout(View view) {
