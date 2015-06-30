@@ -18,14 +18,23 @@
             android:layout_height="wrap_content"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-                <android.support.v7.widget.Toolbar
-                    android:id="@+id/toolbar"
-                    android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    android:background="?attr/colorPrimary"
-                    app:layout_collapseMode="pin"
-                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-                    app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+
+
+        </android.support.design.widget.AppBarLayout>
+<!--
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
             <android.support.design.widget.TabLayout
                 android:id="@+id/tabLayout"
@@ -34,90 +43,8 @@
                 app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
         </android.support.design.widget.AppBarLayout>
+-->
 
-        <android.support.v4.widget.NestedScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:orientation="vertical" >
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:orientation="horizontal" >
-
-                    <Button
-                        android:id="@+id/report_Fault_Button"
-                        android:text="@string/report_Fault"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:onClick="goFaultRep"
-                        android:layout_weight="1"/>
-
-                    <Button
-                        android:id="@+id/report_Avail_Button"
-                        android:text="@string/report_Avail"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"/>
-
-                </LinearLayout>
-
-                <Button
-                    android:id="@+id/logout_Button"
-                    android:text="@string/logout"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:onClick="logout"/>
-
-                <TextView
-                    android:text="@string/information"
-                    android:textSize="30sp"
-                    android:layout_marginBottom="10dip"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center" />
-                <TextView
-                    android:id="@+id/username_act_main"
-                    android:text="@string/Name"
-                    android:textSize="30sp"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:text="@string/Privilege"
-                    android:textSize="30sp"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:text="@string/create_Date"
-                    android:textSize="30sp"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:text="@string/exp_Date"
-                    android:textSize="30sp"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="300dp"
-                    android:id="@+id/imageView"
-                    android:src="@drawable/android_logo" />
-
-                <TextView
-                    android:text="@string/download_Manual"
-                    android:textSize="30sp"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent" />
-
-            </LinearLayout>
-
-        </android.support.v4.widget.NestedScrollView>
 
     </android.support.design.widget.CoordinatorLayout>
 

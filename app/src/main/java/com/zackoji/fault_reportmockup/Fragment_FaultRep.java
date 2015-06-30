@@ -2,8 +2,6 @@ package com.zackoji.fault_reportmockup;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -12,7 +10,7 @@ import android.widget.TextView;
 /**
  * Created by Zackoji on 24/6/2558.
  */
-public class FaultRepActivity extends AppCompatActivity {
+public class Fragment_FaultRep extends AppCompatActivity {
 
     TextView username_TextV;
     Button logout_Butt;
@@ -21,7 +19,7 @@ public class FaultRepActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fault_report);
+        setContentView(R.layout.fragment_fault_report);
 
         Intent intent = getIntent();
         String username = intent.getStringExtra("UsernameFault");
@@ -30,7 +28,7 @@ public class FaultRepActivity extends AppCompatActivity {
     }
 
     public void logout(View view) {
-        Intent objIntentLogout = new Intent(FaultRepActivity.this, Login.class);
+        Intent objIntentLogout = new Intent(Fragment_FaultRep.this, Login.class);
         startActivity(objIntentLogout);
         finish();
     }

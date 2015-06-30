@@ -25,7 +25,7 @@
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name=".FaultRepActivity"
+            android:name=".Fragment_FaultRep"
             android:label="@string/app_name" >
         </activity>
     </application>
