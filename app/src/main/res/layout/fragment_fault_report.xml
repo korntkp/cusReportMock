@@ -1,93 +1,97 @@
-<LinearLayout
+<android.support.v4.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-
-        >
-        <TextView
-            android:text="@string/banner"
-            android:textSize="20sp"
-            android:layout_marginBottom="30dip"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="left" />
-        <Button
-            android:id="@+id/logout_Button"
-            android:text="@string/logout"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:onClick="logout"/>
-    </LinearLayout>
-
-    <ScrollView
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/rootLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:orientation="vertical" >
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:orientation="vertical"
+            >
+
+            <android.support.design.widget.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/tabLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
 
-            <TextView
-                android:text="@string/information"
-                android:textSize="30sp"
-                android:layout_marginBottom="10dip"
+            </android.support.design.widget.AppBarLayout>
+
+            <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center" />
-            <TextView
-                android:textSize="20sp"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/fault_username"
-                android:text="Username :"/>
+                android:orientation="horizontal"
+
+                >
+                <TextView
+                    android:text="@string/banner"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="30dip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left" />
+                <Button
+                    android:id="@+id/logout_Button"
+                    android:text="@string/logout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="logout"/>
+            </LinearLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
 
 
-            <TextView
-                android:text="@string/download_Manual"
-                android:textSize="30sp"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent" />
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical" >
+
+
+                    <TextView
+                        android:text="@string/information"
+                        android:textSize="30sp"
+                        android:layout_marginBottom="10dip"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center" />
+                    <TextView
+                        android:textSize="20sp"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/fault_username"
+                        android:text="Username :"/>
+
+
+                    <TextView
+                        android:text="@string/download_Manual"
+                        android:textSize="30sp"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent" />
+
+                </LinearLayout>
+            </ScrollView>
 
         </LinearLayout>
-    </ScrollView>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+    </android.support.design.widget.CoordinatorLayout>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/banner_sitemap"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/banner_copyr"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/banner_privacy"/>
-
-    </LinearLayout>
-
-
-
-</LinearLayout>
-
+</android.support.v4.widget.DrawerLayout>

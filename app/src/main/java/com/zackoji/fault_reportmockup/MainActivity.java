@@ -61,6 +61,11 @@ public class MainActivity extends AppCompatActivity {
                 switch (menuItem.getItemId()){
                     case R.id.navItem1_Fault_Re:
                         //Toast.makeText(getApplicationContext(),"Fault Report",Toast.LENGTH_SHORT).show();
+
+                        Fragment_FaultRep fragment = new Fragment_FaultRep();
+                        android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction.replace(R.id.fragment_layout,fragment);
+                        fragmentTransaction.commit();
                         return true;
 
                     case R.id.navItem2_Avai_Re:
@@ -96,10 +101,7 @@ public class MainActivity extends AppCompatActivity {
     private void initInstances() {
         rootLayout = (CoordinatorLayout) findViewById(R.id.rootLayout);
 
-//        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
-//        tabLayout.addTab(tabLayout.newTab().setText("Month 1"));
-//        tabLayout.addTab(tabLayout.newTab().setText("Month 2"));
-//        tabLayout.addTab(tabLayout.newTab().setText("Month 3"));
+
 
         // Initializing Drawer Layout and ActionBarToggle
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
