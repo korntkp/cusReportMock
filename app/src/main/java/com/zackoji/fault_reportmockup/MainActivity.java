@@ -23,10 +23,8 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     TextView username_TextV;
-    Button logout_Butt;
     String username = "test";
     CoordinatorLayout rootLayout;
-    CollapsingToolbarLayout collapsingToolbarLayout;
     Toolbar toolbar;
     TabLayout tabLayout;
 
@@ -48,15 +46,30 @@ public class MainActivity extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-/*
-        collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsingToolbarLayout);
-        collapsingToolbarLayout.setTitle("Service Performance Online");
-*/
+
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         tabLayout.addTab(tabLayout.newTab().setText("Info"));
         tabLayout.addTab(tabLayout.newTab().setText("Month 1"));
         tabLayout.addTab(tabLayout.newTab().setText("Month 2"));
         tabLayout.addTab(tabLayout.newTab().setText("Month 3"));
+    }
+
+    public void logout(View view) {
+        Intent objIntentLogout = new Intent(MainActivity.this, Login.class);
+        startActivity(objIntentLogout);
+        finish();
+    }
+
+    public void goFaultRep(View view) {
+        //Toast.makeText(getApplicationContext(), "asdf;", Toast.LENGTH_LONG).show();
+        Intent objIntent1 = new Intent(MainActivity.this, FaultRepActivity.class);
+
+        TextView usern_textv = (TextView) findViewById(R.id.username_act_main);
+        String usernameFault = usern_textv.getText().toString();
+        objIntent1.putExtra("UsernameFault", usernameFault);
+
+        startActivity(objIntent1);
+        //finish(); // It will EXIT from application
     }
 
     @Override
@@ -81,23 +94,6 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void logout(View view) {
-        Intent objIntentLogout = new Intent(MainActivity.this, Login.class);
-        startActivity(objIntentLogout);
-        finish();
 
-    }
-
-    public void goFaultRep(View view) {
-        //Toast.makeText(getApplicationContext(), "asdf;", Toast.LENGTH_LONG).show();
-        Intent objIntent1 = new Intent(MainActivity.this, FaultRepActivity.class);
-
-        TextView usern_textv = (TextView) findViewById(R.id.username_act_main);
-        String usernameFault = usern_textv.getText().toString();
-        objIntent1.putExtra("UsernameFault", usernameFault);
-
-        startActivity(objIntent1);
-        //finish();
-    }
 
 }
