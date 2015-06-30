@@ -15,10 +15,6 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
-
-
-
 public class MainActivity extends AppCompatActivity {
 
     TextView username_TextV;
@@ -51,11 +47,11 @@ public class MainActivity extends AppCompatActivity {
                 //Checking if the item is in checked state or not, if not make it in checked state
                 if(menuItem.isChecked()) {
                     menuItem.setChecked(false);
-                    Toast.makeText(getApplicationContext(),"Set Checked -> False",Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getApplicationContext(),"Set Checked -> False",Toast.LENGTH_SHORT).show();
                 }
                 else {
                     menuItem.setChecked(true);
-                    Toast.makeText(getApplicationContext(),"Set Checked -> True",Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getApplicationContext(),"Set Checked -> True",Toast.LENGTH_SHORT).show();
                 }
 
                 //Closing drawer on item click
@@ -88,10 +84,8 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
     });
-
         initInstances();
         initToolbar();
-
     }
 
     private void initToolbar() {
