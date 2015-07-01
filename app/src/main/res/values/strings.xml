@@ -9,12 +9,6 @@
 
     <string name="report_Fault">Report Fault</string>
     <string name="report_Avail">Report Availability</string>
-    
-    <string name="information">Information</string>
-    <string name="Name">Username :</string>
-    <string name="Privilege">Privilege :</string>
-    <string name="create_Date">Create Date :</string>
-    <string name="exp_Date">Expire Date :</string>
 
     <string name="download_Manual">คู่มือสำหรับผู้ใช้บริการ</string>
     
@@ -33,4 +27,22 @@
 
     <string name="fault_rep_header">Fault Report</string>
     <string name="circuit_no">Circuit No.</string>
+
+    <string name="avail_rep_header">Availability Report</string>
+
+    <string name="profile_header">Profile</string>
+    <string name="information">Information</string>
+    <string name="name">Username :</string>
+    <string name="privilege">Privilege :</string>
+    <string name="create_date">Create Date :</string>
+    <string name="exp_date">Expire Date :</string>
+
+    <string name="failt_rep_total_down">Total Down :</string>
+    <string name="failt_rep_total_true_maintain">Total True Maintain :</string>
+    <string name="failt_rep_net_avail">Network Availability (%) :</string>
+
+    <string name="avail_rep_total_fail">Total Failure (Min) :</string>
+    <string name="avail_rep_total_avail">Total Availability (%) :</string>
+    <string name="avail_rep_true_min_down">True Minute Down (Min) :</string>
+    <string name="avail_rep_isa">Individual Service Availability ISA (%) :</string>
 </resources>

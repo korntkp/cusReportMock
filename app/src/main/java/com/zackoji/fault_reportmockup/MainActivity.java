@@ -78,6 +78,10 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.navItem3_Pro:
                         //Toast.makeText(getApplicationContext(),"Profile",Toast.LENGTH_SHORT).show();
+                        Fragment_Profile fragment_profile = new Fragment_Profile();
+                        android.support.v4.app.FragmentTransaction fragmentTransaction_profile = getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction_profile.replace(R.id.fragment_layout, fragment_profile);
+                        fragmentTransaction_profile.commit();
                         return true;
 
                     case R.id.navItem4_Log:

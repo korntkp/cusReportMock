@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:layout_margin="16dp"
-        android:text="nuuneoi"
+        android:text="Menu"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
 
 </FrameLayout>

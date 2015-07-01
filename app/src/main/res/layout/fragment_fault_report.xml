@@ -75,102 +75,17 @@
                         android:gravity="center" />
 
                     <TextView
-                        android:text="@string/circuit_no"
+                        android:text="@string/failt_rep_total_down"
                         android:textSize="30sp"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent" />
                     <TextView
-                        android:text="@string/circuit_no"
+                        android:text="@string/failt_rep_total_true_maintain"
                         android:textSize="30sp"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent" />
                     <TextView
-                        android:text="@string/circuit_no"
-                        android:textSize="30sp"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent" />
-                    <TextView
-                        android:text="@string/circuit_no"
-                        android:textSize="30sp"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent" />
-                    <TextView
-                        android:text="@string/circuit_no"
-                        android:textSize="30sp"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent" />
-                    <TextView
-                        android:text="@string/circuit_no"
-                        android:textSize="30sp"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent" />
-                    <TextView
-                        android:text="@string/circuit_no"
-                        android:textSize="30sp"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent" />
-                    <TextView
-                        android:text="@string/circuit_no"
-                        android:textSize="30sp"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent" />
-                    <TextView
-                        android:text="@string/circuit_no"
-                        android:textSize="30sp"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent" />
-                    <TextView
-                        android:text="@string/circuit_no"
-                        android:textSize="30sp"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent" />
-                    <TextView
-                        android:text="@string/circuit_no"
-                        android:textSize="30sp"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent" />
-                    <TextView
-                        android:text="@string/circuit_no"
-                        android:textSize="30sp"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent" />
-                    <TextView
-                        android:text="@string/circuit_no"
-                        android:textSize="30sp"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent" />
-                    <TextView
-                        android:text="@string/circuit_no"
-                        android:textSize="30sp"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent" />
-                    <TextView
-                        android:text="@string/circuit_no"
-                        android:textSize="30sp"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent" />
-                    <TextView
-                        android:text="@string/circuit_no"
-                        android:textSize="30sp"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent" />
-                    <TextView
-                        android:text="@string/circuit_no"
-                        android:textSize="30sp"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent" />
-                    <TextView
-                        android:text="@string/circuit_no"
-                        android:textSize="30sp"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent" />
-                    <TextView
-                        android:text="@string/circuit_no"
-                        android:textSize="30sp"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent" />
-                    <TextView
-                        android:text="@string/circuit_no"
+                        android:text="@string/failt_rep_net_avail"
                         android:textSize="30sp"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent" />
