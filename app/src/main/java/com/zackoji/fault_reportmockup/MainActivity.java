@@ -61,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
                 switch (menuItem.getItemId()){
                     case R.id.navItem1_Fault_Re:
                         //Toast.makeText(getApplicationContext(),"Fault Report",Toast.LENGTH_SHORT).show();
-
                         Fragment_Fault fragment_fault = new Fragment_Fault();
                         android.support.v4.app.FragmentTransaction fragmentTransaction_fault = getSupportFragmentManager().beginTransaction();
                         fragmentTransaction_fault.replace(R.id.fragment_layout,fragment_fault);
