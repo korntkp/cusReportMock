@@ -62,14 +62,18 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.navItem1_Fault_Re:
                         //Toast.makeText(getApplicationContext(),"Fault Report",Toast.LENGTH_SHORT).show();
 
-                        Fragment_FaultRep fragment = new Fragment_FaultRep();
-                        android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                        fragmentTransaction.replace(R.id.fragment_layout,fragment);
-                        fragmentTransaction.commit();
+                        Fragment_Fault fragment_fault = new Fragment_Fault();
+                        android.support.v4.app.FragmentTransaction fragmentTransaction_fault = getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction_fault.replace(R.id.fragment_layout,fragment_fault);
+                        fragmentTransaction_fault.commit();
                         return true;
 
                     case R.id.navItem2_Avai_Re:
                         //Toast.makeText(getApplicationContext(),"Availability Report",Toast.LENGTH_SHORT).show();
+                        Fragment_Avail fragment_avail = new Fragment_Avail();
+                        android.support.v4.app.FragmentTransaction fragmentTransaction_avail = getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction_avail.replace(R.id.fragment_layout,fragment_avail);
+                        fragmentTransaction_avail.commit();
                         return true;
 
                     case R.id.navItem3_Pro:
@@ -133,11 +137,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void goFaultRep(View view) {
         //Toast.makeText(getApplicationContext(), "asdf;", Toast.LENGTH_LONG).show();
-        Intent objIntent1 = new Intent(MainActivity.this, Fragment_FaultRep.class);
+        Intent objIntent1 = new Intent(MainActivity.this, Fragment_Fault.class);
 
-        TextView usern_textv = (TextView) findViewById(R.id.username_act_main);
-        String usernameFault = usern_textv.getText().toString();
-        objIntent1.putExtra("UsernameFault", usernameFault);
+        //TextView usern_textv = (TextView) findViewById(R.id.username_act_main);
+        //String usernameFault = usern_textv.getText().toString();
+        //objIntent1.putExtra("UsernameFault", usernameFault);
 
         startActivity(objIntent1);
         //finish(); // It will EXIT from application

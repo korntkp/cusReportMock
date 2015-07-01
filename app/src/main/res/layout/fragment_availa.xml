@@ -2,94 +2,96 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawerLayout"
+    android:id="@+id/drawerLayout_avail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment_FaultRep">
+    tools:context=".Fragment_Avail">
 
-
-    <android.support.v4.widget.NestedScrollView
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/rootLayout_avail"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:orientation="vertical" >
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:orientation="vertical"
+            >
 
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:orientation="horizontal" >
-
-                <Button
-                    android:id="@+id/report_Fault_Button"
-                    android:text="@string/report_Fault"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:onClick="goFaultRep"
-                    android:layout_weight="1"/>
-
-                <Button
-                    android:id="@+id/report_Avail_Button"
-                    android:text="@string/report_Avail"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
-
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/logout_Button"
-                android:text="@string/logout"
-                android:layout_width="fill_parent"
+            <android.support.design.widget.AppBarLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="logout"/>
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-            <TextView
-                android:text="@string/information"
-                android:textSize="30sp"
-                android:layout_marginBottom="10dip"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center" />
-            <TextView
-                android:id="@+id/username_act_main"
-                android:text="@string/Name"
-                android:textSize="30sp"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" />
-            <TextView
-                android:text="@string/Privilege"
-                android:textSize="30sp"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" />
-            <TextView
-                android:text="@string/create_Date"
-                android:textSize="30sp"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" />
-            <TextView
-                android:text="@string/exp_Date"
-                android:textSize="30sp"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent" />
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/tabLayout_avail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="300dp"
-                android:id="@+id/imageView"
-                android:src="@drawable/android_logo" />
 
-            <TextView
-                android:text="@string/download_Manual"
-                android:textSize="30sp"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent" />
+            </android.support.design.widget.AppBarLayout>
+
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical" >
+                    <!--
+                    <TextView
+                        android:text="@string/information"
+                        android:textSize="30sp"
+                        android:layout_marginBottom="10dip"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center" />
+                    <TextView
+                        android:id="@+id/username_act_main"
+                        android:text="@string/Name"
+                        android:textSize="30sp"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" />
+
+                    -->
+                    <TextView
+                        android:text="@string/Privilege"
+                        android:textSize="30sp"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:text="@string/create_Date"
+                        android:textSize="30sp"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:text="@string/exp_Date"
+                        android:textSize="30sp"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent" />
+
+                    <!--<ImageView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="300dp"-->
+                        <!--android:id="@+id/imageView"-->
+                        <!--android:src="@drawable/android_logo" />-->
+
+                    <TextView
+                        android:text="@string/download_Manual"
+                        android:textSize="30sp"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent" />
+
+                </LinearLayout>
+
+            </android.support.v4.widget.NestedScrollView>
 
         </LinearLayout>
-
-    </android.support.v4.widget.NestedScrollView>
+    </android.support.design.widget.CoordinatorLayout>
 
 </android.support.v4.widget.DrawerLayout>

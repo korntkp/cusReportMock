@@ -15,7 +15,7 @@ import android.widget.TextView;
 /**
  * Created by Zackoji on 24/6/2558.
  */
-public class Fragment_FaultRep extends Fragment {
+public class Fragment_Fault extends Fragment {
 
     TextView username_TextV;
     Button logout_Butt;
@@ -27,7 +27,7 @@ public class Fragment_FaultRep extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_fault_report, container, false);
 
-        tabLayout = (TabLayout) rootView.findViewById(R.id.tabLayout);
+        tabLayout = (TabLayout) rootView.findViewById(R.id.tabLayout_fault);
         tabLayout.addTab(tabLayout.newTab().setText("Month 1"));
         tabLayout.addTab(tabLayout.newTab().setText("Month 2"));
         tabLayout.addTab(tabLayout.newTab().setText("Month 3"));
@@ -48,7 +48,7 @@ public class Fragment_FaultRep extends Fragment {
     }
 
     public void logout(View view) {
-        Intent objIntentLogout = new Intent(Fragment_FaultRep.this, Login.class);
+        Intent objIntentLogout = new Intent(Fragment_Fault.this, Login.class);
         startActivity(objIntentLogout);
         finish();
     }
