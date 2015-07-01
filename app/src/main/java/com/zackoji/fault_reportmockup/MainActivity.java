@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     TabLayout tabLayout;
     NavigationView navigationView;
     DrawerLayout drawerLayout;
+    LinearLayout fragment_LinearLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,20 @@ public class MainActivity extends AppCompatActivity {
         username_TextV.setText(username_TextV.getText().toString() + username);
 */
         navigationView = (NavigationView) findViewById(R.id.navigation);
+
+        /**
+         * Set Fragment_Fault to fragment_layout
+         * */
+        Fragment_Fault fragment_fault = new Fragment_Fault();
+        android.support.v4.app.FragmentTransaction fragmentTransaction_fault = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction_fault.replace(R.id.fragment_layout,fragment_fault);
+        fragmentTransaction_fault.commit();
+
+        /**
+         * Set Checked menuItem to Fault Report
+         * */
+        navigationView.getMenu().getItem(0).setChecked(true);
+
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
