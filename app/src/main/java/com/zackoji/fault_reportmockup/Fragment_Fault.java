@@ -34,8 +34,6 @@ public class Fragment_Fault extends Fragment {
         adapter_tab_fault = new PageAdapter_Tab_Fault(getChildFragmentManager());
         pager_fault.setAdapter(adapter_tab_fault);
 
-
-
         tabLayout = (TabLayout) rootView.findViewById(R.id.tabLayout_fault);
         tabLayout.addTab(tabLayout.newTab());
         tabLayout.addTab(tabLayout.newTab());

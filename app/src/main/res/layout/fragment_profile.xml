@@ -13,14 +13,6 @@
         android:layout_height="match_parent"
         android:background="#FFFFFF">
 
-        <!--<LinearLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:background="#FFFFFF"-->
-            <!--android:orientation="vertical"-->
-            <!-->-->
-
-
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -144,8 +136,6 @@
 
                 </LinearLayout>
             </ScrollView>
-
-        <!--</LinearLayout>-->
 
     </android.support.design.widget.CoordinatorLayout>
 
