@@ -2,13 +2,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawerLayout"
+    android:id="@+id/drawerLayout_fault"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragment_Fault">
 
     <android.support.design.widget.CoordinatorLayout
-        android:id="@+id/rootLayout"
+        android:id="@+id/rootLayout_fault"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -16,8 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#FFFFFF"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <android.support.design.widget.AppBarLayout
                 android:layout_width="match_parent"
@@ -31,15 +30,13 @@
                     app:tabGravity="fill"
                     app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-
             </android.support.design.widget.AppBarLayout>
 
             <android.support.v4.view.ViewPager
                 android:id="@+id/pager_tab_fault"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#ffffff"
-                />
+                android:background="#ffffff" />
 
         </LinearLayout>
 

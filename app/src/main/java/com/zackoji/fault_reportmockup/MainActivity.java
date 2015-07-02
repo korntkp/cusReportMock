@@ -32,21 +32,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //Toast.makeText(getApplicationContext(), "sdfghjkl;", Toast.LENGTH_LONG).show();
+
         Intent intent = getIntent();
         /*
         username = intent.getStringExtra("Username");
         username_TextV = (TextView) findViewById(R.id.username_act_main);
         username_TextV.setText(username_TextV.getText().toString() + username);
 */
-        navigationView = (NavigationView) findViewById(R.id.navigation);
+        navigationView = (NavigationView) findViewById(R.id.navigation_main);
 
         /**
          * Set Fragment_Fault to fragment_layout
          * */
         Fragment_Fault fragment_fault = new Fragment_Fault();
         android.support.v4.app.FragmentTransaction fragmentTransaction_fault = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction_fault.replace(R.id.fragment_layout,fragment_fault);
+        fragmentTransaction_fault.replace(R.id.fragment_layout_main,fragment_fault);
         fragmentTransaction_fault.commit();
 
         /**
@@ -54,20 +54,15 @@ public class MainActivity extends AppCompatActivity {
          * */
         navigationView.getMenu().getItem(0).setChecked(true);
 
-
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
-                //Toast.makeText(getApplicationContext(), menuItem.getItemId(), Toast.LENGTH_LONG).show();
-
                 //Checking if the item is in checked state or not, if not make it in checked state
                 if(menuItem.isChecked()) {
                     menuItem.setChecked(false);
-                    //Toast.makeText(getApplicationContext(),"Set Checked -> False",Toast.LENGTH_SHORT).show();
                 }
                 else {
                     menuItem.setChecked(true);
-                    //Toast.makeText(getApplicationContext(),"Set Checked -> True",Toast.LENGTH_SHORT).show();
                 }
 
                 //Closing drawer on item click
@@ -75,31 +70,31 @@ public class MainActivity extends AppCompatActivity {
 
                 //Check to see which item was being clicked and perform appropriate action
                 switch (menuItem.getItemId()){
-                    case R.id.navItem1_Fault_Re:
+                    case R.id.navItem1_Fault_Rep:
                         //Toast.makeText(getApplicationContext(),"Fault Report",Toast.LENGTH_SHORT).show();
                         Fragment_Fault fragment_fault = new Fragment_Fault();
                         android.support.v4.app.FragmentTransaction fragmentTransaction_fault = getSupportFragmentManager().beginTransaction();
-                        fragmentTransaction_fault.replace(R.id.fragment_layout,fragment_fault);
+                        fragmentTransaction_fault.replace(R.id.fragment_layout_main,fragment_fault);
                         fragmentTransaction_fault.commit();
                         return true;
 
-                    case R.id.navItem2_Avai_Re:
+                    case R.id.navItem2_Avail_Rep:
                         //Toast.makeText(getApplicationContext(),"Availability Report",Toast.LENGTH_SHORT).show();
                         Fragment_Avail fragment_avail = new Fragment_Avail();
                         android.support.v4.app.FragmentTransaction fragmentTransaction_avail = getSupportFragmentManager().beginTransaction();
-                        fragmentTransaction_avail.replace(R.id.fragment_layout,fragment_avail);
+                        fragmentTransaction_avail.replace(R.id.fragment_layout_main,fragment_avail);
                         fragmentTransaction_avail.commit();
                         return true;
 
-                    case R.id.navItem3_Pro:
+                    case R.id.navItem3_Profile:
                         //Toast.makeText(getApplicationContext(),"Profile",Toast.LENGTH_SHORT).show();
                         Fragment_Profile fragment_profile = new Fragment_Profile();
                         android.support.v4.app.FragmentTransaction fragmentTransaction_profile = getSupportFragmentManager().beginTransaction();
-                        fragmentTransaction_profile.replace(R.id.fragment_layout, fragment_profile);
+                        fragmentTransaction_profile.replace(R.id.fragment_layout_main, fragment_profile);
                         fragmentTransaction_profile.commit();
                         return true;
 
-                    case R.id.navItem4_Log:
+                    case R.id.navItem4_Logout:
                         //Toast.makeText(getApplicationContext(),"Logout",Toast.LENGTH_SHORT).show();
                         Intent objIntentLogout = new Intent(MainActivity.this, Login.class);
                         startActivity(objIntentLogout);
@@ -117,15 +112,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initToolbar() {
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar_main);
         setSupportActionBar(toolbar);
     }
 
     private void initInstances() {
-        rootLayout = (CoordinatorLayout) findViewById(R.id.rootLayout);
+        rootLayout = (CoordinatorLayout) findViewById(R.id.rootLayout_main);
 
         // Initializing Drawer Layout and ActionBarToggle
-        drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout_main);
         ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.openDrawer, R.string.closeDrawer){
 
             @Override

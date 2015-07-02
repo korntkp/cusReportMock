@@ -22,7 +22,6 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.login);
     }
 
-
     public void chkLogin(View view) {
         Intent objIntent = new Intent(Login.this, MainActivity.class);
 

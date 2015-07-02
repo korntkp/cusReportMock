@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <group android:checkableBehavior="single">
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:checkableBehavior="single">
+
         <item
-            android:id="@+id/navItem1_Fault_Re"
+            android:id="@+id/navItem1_Fault_Rep"
             android:icon="@drawable/ic_action_location_found_dark"
             android:title="Fault Report"/>
+
         <item
-            android:id="@+id/navItem2_Avai_Re"
+            android:id="@+id/navItem2_Avail_Rep"
             android:icon="@drawable/ic_action_location_found_dark"
             android:title="Availability Report"/>
 
         <item
-            android:id="@+id/navItem3_Pro"
+            android:id="@+id/navItem3_Profile"
             android:icon="@drawable/ic_action_location_found_dark"
             android:title="Profile"/>
 
         <item
-            android:id="@+id/navItem4_Log"
+            android:id="@+id/navItem4_Logout"
             android:icon="@drawable/ic_action_location_found_dark"
             android:title="Logout"/>
+
     </group>
 </menu>

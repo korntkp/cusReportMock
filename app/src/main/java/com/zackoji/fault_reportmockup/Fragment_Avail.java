@@ -14,7 +14,7 @@ import android.view.ViewGroup;
  */
 public class Fragment_Avail extends Fragment {
 
-    TabLayout tabLayout_avai;
+    TabLayout tabLayout_avail;
     ViewPager pager_avail;
     PageAdapter_Tab_Avail adapter_tab_avail;
 
@@ -27,16 +27,16 @@ public class Fragment_Avail extends Fragment {
         adapter_tab_avail = new PageAdapter_Tab_Avail(getChildFragmentManager());
         pager_avail.setAdapter(adapter_tab_avail);
 
-        tabLayout_avai = (TabLayout) rootView.findViewById(R.id.tabLayout_avail);
-        tabLayout_avai.addTab(tabLayout_avai.newTab());
-        tabLayout_avai.addTab(tabLayout_avai.newTab());
-        tabLayout_avai.addTab(tabLayout_avai.newTab());
+        tabLayout_avail = (TabLayout) rootView.findViewById(R.id.tabLayout_avail);
+        tabLayout_avail.addTab(tabLayout_avail.newTab());
+        tabLayout_avail.addTab(tabLayout_avail.newTab());
+        tabLayout_avail.addTab(tabLayout_avail.newTab());
 
-        tabLayout_avai.setupWithViewPager(pager_avail);
+        tabLayout_avail.setupWithViewPager(pager_avail);
 
-        tabLayout_avai.getTabAt(0).setText("Month 1");
-        tabLayout_avai.getTabAt(1).setText("Month 2");
-        tabLayout_avai.getTabAt(2).setText("Month 3");
+        tabLayout_avail.getTabAt(0).setText("Month 1");
+        tabLayout_avail.getTabAt(1).setText("Month 2");
+        tabLayout_avail.getTabAt(2).setText("Month 3");
 
         return rootView;
     }

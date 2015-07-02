@@ -19,7 +19,6 @@ import android.widget.TextView;
 public class Fragment_Fault extends Fragment {
 
     TextView username_TextV;
-    Button logout_Butt;
     //String username = "test2";
     TabLayout tabLayout;
     ViewPager pager_fault;
