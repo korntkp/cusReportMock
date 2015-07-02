@@ -124,8 +124,6 @@ public class MainActivity extends AppCompatActivity {
     private void initInstances() {
         rootLayout = (CoordinatorLayout) findViewById(R.id.rootLayout);
 
-
-
         // Initializing Drawer Layout and ActionBarToggle
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.openDrawer, R.string.closeDrawer){
@@ -187,7 +185,4 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-
-
 }

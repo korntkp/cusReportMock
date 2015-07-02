@@ -26,6 +26,9 @@
     <string name="openDrawer">Navigation View Closed</string>
 
     <string name="fault_rep_header">Fault Report</string>
+    <string name="month_1">Month 1</string>
+    <string name="month_2">Month 2</string>
+    <string name="month_3">Month 3</string>
     <string name="circuit_no">Circuit No.</string>
 
     <string name="avail_rep_header">Availability Report</string>
