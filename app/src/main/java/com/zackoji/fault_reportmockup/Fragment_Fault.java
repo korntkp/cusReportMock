@@ -37,16 +37,16 @@ public class Fragment_Fault extends Fragment {
 
 
         tabLayout = (TabLayout) rootView.findViewById(R.id.tabLayout_fault);
-        tabLayout.addTab(tabLayout.newTab().setText("Month 1"));
-        tabLayout.addTab(tabLayout.newTab().setText("Month 2"));
-        tabLayout.addTab(tabLayout.newTab().setText("Month 3"));
-
-        //tabLayout.getTabAt(0).setIcon(R.drawable.android_logo);
-        tabLayout.getTabAt(1).setText("Month 1");
-        tabLayout.getTabAt(2).setText("Month 1");
-//        tabLayout.getTabAt(3).setText("Month 1");
+        tabLayout.addTab(tabLayout.newTab());
+        tabLayout.addTab(tabLayout.newTab());
+        tabLayout.addTab(tabLayout.newTab());
 
         tabLayout.setupWithViewPager(pager_fault);
+
+        tabLayout.getTabAt(0).setText("Month 1");
+        tabLayout.getTabAt(1).setText("Month 2");
+        tabLayout.getTabAt(2).setText("Month 3");
+
         return rootView;
     }
 
