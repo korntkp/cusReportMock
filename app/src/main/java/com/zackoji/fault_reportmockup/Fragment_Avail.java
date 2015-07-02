@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.zackoji.fault_reportmockup.tab_avail.PageAdapter_Tab_Avail;
+
 /**
  * Created by Zackoji on 30/6/2558.
  */

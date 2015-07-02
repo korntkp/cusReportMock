@@ -1,17 +1,16 @@
 package com.zackoji.fault_reportmockup;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
+
+import com.zackoji.fault_reportmockup.tab_fault.PageAdapter_Tab_Fault;
 
 /**
  * Created by Zackoji on 24/6/2558.
