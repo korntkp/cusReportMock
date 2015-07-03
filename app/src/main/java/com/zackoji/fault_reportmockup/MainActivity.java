@@ -1,6 +1,7 @@
 package com.zackoji.fault_reportmockup;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     NavigationView navigationView;
     DrawerLayout drawerLayout;
     LinearLayout fragment_LinearLayout;
+    ActionBarDrawerToggle drawerToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,10 @@ public class MainActivity extends AppCompatActivity {
 */
         navigationView = (NavigationView) findViewById(R.id.navigation_main);
 
+        initToolbar();
+        initInstances();
+
+
         /**
          * Set Fragment_Fault to fragment_layout
          * */
@@ -48,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
         android.support.v4.app.FragmentTransaction fragmentTransaction_fault = getSupportFragmentManager().beginTransaction();
         fragmentTransaction_fault.replace(R.id.fragment_layout_main,fragment_fault);
         fragmentTransaction_fault.commit();
+
+
 
         /**
          * Set Checked menuItem to Fault Report
@@ -76,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
                         android.support.v4.app.FragmentTransaction fragmentTransaction_fault = getSupportFragmentManager().beginTransaction();
                         fragmentTransaction_fault.replace(R.id.fragment_layout_main,fragment_fault);
                         fragmentTransaction_fault.commit();
+                        getSupportActionBar().setTitle("Fault Report");
                         return true;
 
                     case R.id.navItem2_Avail_Rep:
@@ -84,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
                         android.support.v4.app.FragmentTransaction fragmentTransaction_avail = getSupportFragmentManager().beginTransaction();
                         fragmentTransaction_avail.replace(R.id.fragment_layout_main,fragment_avail);
                         fragmentTransaction_avail.commit();
+                        getSupportActionBar().setTitle("Availability Report");
                         return true;
 
                     case R.id.navItem3_Profile:
@@ -92,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
                         android.support.v4.app.FragmentTransaction fragmentTransaction_profile = getSupportFragmentManager().beginTransaction();
                         fragmentTransaction_profile.replace(R.id.fragment_layout_main, fragment_profile);
                         fragmentTransaction_profile.commit();
+                        getSupportActionBar().setTitle("Profile");
                         return true;
 
                     case R.id.navItem4_Logout:
@@ -107,8 +118,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
     });
-        initInstances();
-        initToolbar();
+
     }
 
     private void initToolbar() {
@@ -117,28 +127,59 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initInstances() {
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout_main);
+        drawerToggle = new ActionBarDrawerToggle(MainActivity.this, drawerLayout, R.string.hello_world, R.string.hello_world);
+        drawerLayout.setDrawerListener(drawerToggle);
+
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Fault Report");
+
         rootLayout = (CoordinatorLayout) findViewById(R.id.rootLayout_main);
 
+//        drawerLayout.setDrawerListener(new DrawerLayout.DrawerListener() {
+//            @Override
+//            public void onDrawerSlide(View drawerView, float slideOffset) {
+////                Toast.makeText(getApplicationContext(),"onDrawerSlide",Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onDrawerOpened(View drawerView) {
+//                Toast.makeText(getApplicationContext(),"onDrawerOpened",Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onDrawerClosed(View drawerView) {
+//                Toast.makeText(getApplicationContext(),"onDrawerClosed",Toast.LENGTH_SHORT).show();
+//                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//            }
+//
+//            @Override
+//            public void onDrawerStateChanged(int newState) {
+////                Toast.makeText(getApplicationContext(),"onDrawerStateChanged",Toast.LENGTH_SHORT).show();
+//            }
+//        });
+
         // Initializing Drawer Layout and ActionBarToggle
-        drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout_main);
-        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.openDrawer, R.string.closeDrawer){
-
-            @Override
-            public void onDrawerClosed(View drawerView) {
-                // Code here will be triggered once the drawer closes as we dont want anything to happen so we leave this blank
-                super.onDrawerClosed(drawerView);
-            }
-
-            @Override
-            public void onDrawerOpened(View drawerView) {
-                // Code here will be triggered once the drawer open as we dont want anything to happen so we leave this blank
-
-                super.onDrawerOpened(drawerView);
-            }
-        };
+//        drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout_main);
+//        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.openDrawer, R.string.closeDrawer){
+//
+//            @Override
+//            public void onDrawerClosed(View drawerView) {
+//                // Code here will be triggered once the drawer closes as we dont want anything to happen so we leave this blank
+//                super.onDrawerClosed(drawerView);
+//            }
+//
+//            @Override
+//            public void onDrawerOpened(View drawerView) {
+//                // Code here will be triggered once the drawer open as we dont want anything to happen so we leave this blank
+//
+//                super.onDrawerOpened(drawerView);
+//            }
+//        };
 
         //Setting the actionbarToggle to drawer layout
-        drawerLayout.setDrawerListener(actionBarDrawerToggle);
+        //drawerLayout.setDrawerListener(actionBarDrawerToggle);
     }
 
     public void logout(View view) {
@@ -159,6 +200,23 @@ public class MainActivity extends AppCompatActivity {
         //finish(); // It will EXIT from application
     }
 
+    /**
+     * Hamburger Button
+     * */
+    @Override
+    public void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        Toast.makeText(getApplicationContext(), "onPostCreate", Toast.LENGTH_SHORT).show();
+        drawerToggle.syncState();
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+//        Toast.makeText(getApplicationContext(), "onConfigurationChanged", Toast.LENGTH_SHORT).show();
+        drawerToggle.onConfigurationChanged(newConfig);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -168,6 +226,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        /**
+         * Fix Hamburger icon clickable
+         * */
+        if (drawerToggle.onOptionsItemSelected(item))
+            return true;
+
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
