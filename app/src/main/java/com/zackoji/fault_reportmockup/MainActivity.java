@@ -41,11 +41,14 @@ public class MainActivity extends AppCompatActivity {
         username_TextV = (TextView) findViewById(R.id.username_act_main);
         username_TextV.setText(username_TextV.getText().toString() + username);
 */
-        navigationView = (NavigationView) findViewById(R.id.navigation_main);
-
         initToolbar();
         initInstances();
+        initFragment();
 
+    }
+
+    private void initFragment() {
+        navigationView = (NavigationView) findViewById(R.id.navigation_main);
 
         /**
          * Set Fragment_Fault to fragment_layout
@@ -54,8 +57,6 @@ public class MainActivity extends AppCompatActivity {
         android.support.v4.app.FragmentTransaction fragmentTransaction_fault = getSupportFragmentManager().beginTransaction();
         fragmentTransaction_fault.replace(R.id.fragment_layout_main,fragment_fault);
         fragmentTransaction_fault.commit();
-
-
 
         /**
          * Set Checked menuItem to Fault Report
@@ -117,8 +118,7 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                 }
             }
-    });
-
+        });
     }
 
     private void initToolbar() {
@@ -136,68 +136,6 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Fault Report");
 
         rootLayout = (CoordinatorLayout) findViewById(R.id.rootLayout_main);
-
-//        drawerLayout.setDrawerListener(new DrawerLayout.DrawerListener() {
-//            @Override
-//            public void onDrawerSlide(View drawerView, float slideOffset) {
-////                Toast.makeText(getApplicationContext(),"onDrawerSlide",Toast.LENGTH_SHORT).show();
-//            }
-//
-//            @Override
-//            public void onDrawerOpened(View drawerView) {
-//                Toast.makeText(getApplicationContext(),"onDrawerOpened",Toast.LENGTH_SHORT).show();
-//            }
-//
-//            @Override
-//            public void onDrawerClosed(View drawerView) {
-//                Toast.makeText(getApplicationContext(),"onDrawerClosed",Toast.LENGTH_SHORT).show();
-//                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//            }
-//
-//            @Override
-//            public void onDrawerStateChanged(int newState) {
-////                Toast.makeText(getApplicationContext(),"onDrawerStateChanged",Toast.LENGTH_SHORT).show();
-//            }
-//        });
-
-        // Initializing Drawer Layout and ActionBarToggle
-//        drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout_main);
-//        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.openDrawer, R.string.closeDrawer){
-//
-//            @Override
-//            public void onDrawerClosed(View drawerView) {
-//                // Code here will be triggered once the drawer closes as we dont want anything to happen so we leave this blank
-//                super.onDrawerClosed(drawerView);
-//            }
-//
-//            @Override
-//            public void onDrawerOpened(View drawerView) {
-//                // Code here will be triggered once the drawer open as we dont want anything to happen so we leave this blank
-//
-//                super.onDrawerOpened(drawerView);
-//            }
-//        };
-
-        //Setting the actionbarToggle to drawer layout
-        //drawerLayout.setDrawerListener(actionBarDrawerToggle);
-    }
-
-    public void logout(View view) {
-        Intent objIntentLogout = new Intent(MainActivity.this, Login.class);
-        startActivity(objIntentLogout);
-        finish();
-    }
-
-    public void goFaultRep(View view) {
-        //Toast.makeText(getApplicationContext(), "asdf;", Toast.LENGTH_LONG).show();
-        Intent objIntent1 = new Intent(MainActivity.this, Fragment_Fault.class);
-
-        //TextView usern_textv = (TextView) findViewById(R.id.username_act_main);
-        //String usernameFault = usern_textv.getText().toString();
-        //objIntent1.putExtra("UsernameFault", usernameFault);
-
-        startActivity(objIntent1);
-        //finish(); // It will EXIT from application
     }
 
     /**
@@ -206,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
-        Toast.makeText(getApplicationContext(), "onPostCreate", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getApplicationContext(), "onPostCreate", Toast.LENGTH_SHORT).show();
         drawerToggle.syncState();
     }
 
@@ -243,5 +181,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void goFaultRep(View view) {
+        Intent objIntent1 = new Intent(MainActivity.this, Fragment_Fault.class);
+        //TextView usern_textv = (TextView) findViewById(R.id.username_act_main);
+        //String usernameFault = usern_textv.getText().toString();
+        //objIntent1.putExtra("UsernameFault", usernameFault);
+        startActivity(objIntent1);
     }
 }
