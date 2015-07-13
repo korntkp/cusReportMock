@@ -7,7 +7,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#ede4e1">
 
         <LinearLayout
             android:layout_width="fill_parent"
@@ -15,102 +16,281 @@
             android:orientation="vertical" >
 
             <TextView
-                android:text="@string/fault_rep_header"
+                android:id="@+id/month_fault_m3"
                 android:textSize="30sp"
                 android:layout_marginBottom="10dip"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center" />
 
-            <TextView
-                android:text="@string/month_3"
-                android:textSize="30sp"
-                android:layout_marginBottom="10dip"
+            <!-- DDN Fault Report -->
+
+            <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center" />
+                android:background="@drawable/summary_shape"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="30dp"
+                android:orientation="vertical" >
 
-            <TextView
-                android:text="@string/failt_rep_total_down"
-                android:textSize="30sp"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent" />
-            <TextView
-                android:text="@string/failt_rep_total_true_maintain"
-                android:textSize="30sp"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent" />
-            <TextView
-                android:text="@string/failt_rep_net_avail"
-                android:textSize="30sp"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent" />
-            <TextView
-                android:text="@string/circuit_no"
-                android:textSize="30sp"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent" />
-            <TextView
-                android:text="@string/circuit_no"
-                android:textSize="30sp"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent" />
-            <TextView
-                android:text="@string/circuit_no"
-                android:textSize="30sp"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent" />
-            <TextView
-                android:text="@string/circuit_no"
-                android:textSize="30sp"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent" />
-            <TextView
-                android:text="@string/circuit_no"
-                android:textSize="30sp"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent" />
-            <TextView
-                android:text="@string/circuit_no"
-                android:textSize="30sp"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent" />
-            <TextView
-                android:text="@string/circuit_no"
-                android:textSize="30sp"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent" />
-            <TextView
-                android:text="@string/circuit_no"
-                android:textSize="30sp"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent" />
-            <TextView
-                android:text="@string/circuit_no"
-                android:textSize="30sp"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent" />
-            <TextView
-                android:text="@string/circuit_no"
-                android:textSize="30sp"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent" />
-            <TextView
-                android:text="@string/circuit_no"
-                android:textSize="30sp"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent" />
-            <TextView
-                android:text="@string/circuit_no"
-                android:textSize="30sp"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent" />
-            <TextView
-                android:text="@string/circuit_no"
-                android:textSize="30sp"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent" />
+                <TextView
+                    android:text="@string/ddn_fault_rep_header"
+                    android:textSize="25sp"
+                    android:layout_marginBottom="10dip"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center" />
 
+                <TextView
+                    android:id="@+id/ddn_fault_total_down_time_m3"
+                    android:text="@string/fault_rep_total_down"
+                    android:textSize="20sp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/ddn_fault_total_netw_avail_m3"
+                    android:text="@string/fault_rep_net_avail"
+                    android:textSize="20sp"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:layout_height="fill_parent" />
+
+                <TextView
+                    android:id="@+id/ddn_fault_total_true_maintain_time_m3"
+                    android:text="@string/fault_rep_total_true_maintain"
+                    android:textSize="20sp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1" />
+
+
+
+                <TextView
+                    android:id="@+id/ddn_fault_true_maintain_netw_avail_m3"
+                    android:text="@string/fault_rep_net_avail_true"
+                    android:textSize="20sp"
+                    android:layout_weight="1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" />
+
+            </LinearLayout>
+
+            <!-- MPLS Fault Report Month 1-->
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/summary_shape"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="30dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:text="@string/mpls_fault_rep_header"
+                    android:textSize="25dp"
+                    android:layout_marginBottom="10dip"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/mpls_fault_total_down_time_m3"
+                    android:text="@string/fault_rep_total_down"
+                    android:textSize="20dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/mpls_fault_total_netw_avail_m3"
+                    android:text="@string/fault_rep_net_avail"
+                    android:textSize="20dp"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:layout_height="fill_parent" />
+
+                <TextView
+                    android:id="@+id/mpls_fault_total_true_maintain_time_m3"
+                    android:text="@string/fault_rep_total_true_maintain"
+                    android:textSize="20dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1" />
+
+
+
+                <TextView
+                    android:id="@+id/mpls_fault_true_maintain_netw_avail_m3"
+                    android:text="@string/fault_rep_net_avail_true"
+                    android:textSize="20dp"
+                    android:layout_weight="1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" />
+
+            </LinearLayout>
+
+
+            <!-- ddn_nationwide_fault_rep_month1 -->
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/summary_shape"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="30dp"
+                android:orientation="vertical" >
+
+
+                <TextView
+                    android:text="@string/ddn_nationwide_fault_rep_header"
+                    android:textSize="25dp"
+                    android:layout_marginBottom="10dip"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center" />
+                <TextView
+                    android:id="@+id/ddn_nationwide_fault_total_down_time_m3"
+                    android:text="@string/fault_rep_total_down"
+                    android:textSize="20sp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/ddn_nationwide_fault_total_netw_avail_m3"
+                    android:text="@string/fault_rep_net_avail"
+                    android:textSize="20sp"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:layout_height="fill_parent" />
+
+                <TextView
+                    android:id="@+id/ddn_nationwide_fault_total_true_maintain_time_m3"
+                    android:text="@string/fault_rep_total_true_maintain"
+                    android:textSize="20sp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1" />
+
+
+
+                <TextView
+                    android:id="@+id/ddn_nationwide_fault_true_maintain_netw_avail_m3"
+                    android:text="@string/fault_rep_net_avail_true"
+                    android:textSize="20sp"
+                    android:layout_weight="1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" />
+            </LinearLayout>
+
+            <!-- MPLS_nationwide_fault_rep_month1 -->
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/summary_shape"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="30dp"
+                android:orientation="vertical" >
+                <TextView
+                    android:text="@string/mpls_nationwide_fault_rep_header"
+                    android:textSize="25dp"
+                    android:layout_marginBottom="10dip"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center" />
+                <TextView
+                    android:id="@+id/mpls_nationwide_fault_total_down_time_m3"
+                    android:text="@string/fault_rep_total_down"
+                    android:textSize="20sp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/mpls_nationwide_fault_total_netw_avail_m3"
+                    android:text="@string/fault_rep_net_avail"
+                    android:textSize="20sp"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:layout_height="fill_parent" />
+
+
+                <TextView
+                    android:id="@+id/mpls_nationwide_fault_total_true_maintain_time_m3"
+                    android:text="@string/fault_rep_total_true_maintain"
+                    android:textSize="20sp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1" />
+
+
+
+                <TextView
+                    android:id="@+id/mpls_nationwide_fault_true_maintain_netw_avail_m3"
+                    android:text="@string/fault_rep_net_avail_true"
+                    android:textSize="20sp"
+                    android:layout_weight="1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" />
+
+            </LinearLayout>
+
+            <!-- IPLL_nationwide_fault_rep_month1 -->
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/summary_shape"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="30dp"
+                android:orientation="vertical" >
+                <TextView
+                    android:text="@string/ipll_fault_rep_header"
+                    android:textSize="25dp"
+                    android:layout_marginBottom="10dip"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center" />
+                <TextView
+                    android:id="@+id/ipll_fault_total_down_time_m3"
+                    android:text="@string/fault_rep_total_down"
+                    android:textSize="20sp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/ipll_fault_total_netw_avail_m3"
+                    android:text="@string/fault_rep_net_avail"
+                    android:textSize="20sp"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:layout_height="fill_parent" />
+
+                <TextView
+                    android:id="@+id/ipll_fault_total_true_maintain_time_m3"
+                    android:text="@string/fault_rep_total_true_maintain"
+                    android:textSize="20sp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1" />
+
+
+
+                <TextView
+                    android:id="@+id/ipll_fault_true_maintain_netw_avail_m3"
+                    android:text="@string/fault_rep_net_avail_true"
+                    android:textSize="20sp"
+                    android:layout_weight="1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" />
+
+            </LinearLayout>
         </LinearLayout>
 
     </ScrollView>
