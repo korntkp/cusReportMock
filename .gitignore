@@ -1,7 +1,6 @@
 /captures
 /app/src/main/res/drawable/logo.png
-/app/src/main/res/drawable/nav_header_bg.jpg
-/app/src/main/res/drawable/ic_action_location_found_dark.png
+/app/src/main/res/drawable/true_logo_tran_png_v2
 
 #built application files
 *.apk
