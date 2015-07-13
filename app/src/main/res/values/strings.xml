@@ -25,10 +25,18 @@
     <string name="closeDrawer">Navigation View</string>
     <string name="openDrawer">Navigation View Closed</string>
 
-    <string name="fault_rep_header">Fault Report</string>
-    <string name="month_1">Month 1</string>
-    <string name="month_2">Month 2</string>
-    <string name="month_3">Month 3</string>
+    <string name="ddn_fault_rep_header">DDN Fault Report</string>
+    <string name="mpls_fault_rep_header">MPLS Fault Report</string>
+    <string name="ddn_nationwide_fault_rep_header">DDN Nationwide Fault Report</string>
+    <string name="mpls_nationwide_fault_rep_header">MPLS Nationwide Fault Report</string>
+    <string name="ipll_fault_rep_header">IPLL Fault Report</string>
+
+    <string name="ddn_avail_rep_header">DDN Availability Report</string>
+    <string name="mpls_avail_rep_header">MPLS Availability Report</string>
+    <string name="ddn_nationwide_availt_rep_header">DDN Nationwide Availability Report</string>
+    <string name="mpls_nationwide_avail_rep_header">MPLS Nationwide Availability Report</string>
+    <string name="ipll_avail_rep_header">IPLL Availability Report</string>
+
     <string name="circuit_no">Circuit No.</string>
 
     <string name="avail_rep_header">Availability Report</string>
@@ -40,12 +48,16 @@
     <string name="create_date">Create Date :</string>
     <string name="exp_date">Expire Date :</string>
 
-    <string name="failt_rep_total_down">Total Down :</string>
-    <string name="failt_rep_total_true_maintain">Total True Maintain :</string>
-    <string name="failt_rep_net_avail">Network Availability (%) :</string>
+    <string name="fault_rep_total_down">Total Down :</string>
+    <string name="fault_rep_total_true_maintain">Total True Maintain :</string>
+    <string name="fault_rep_net_avail">Network Availability (%) :</string>
+    <string name="fault_rep_net_avail_true">Network Availability (%) :</string>
 
-    <string name="avail_rep_total_fail">Total Failure (Min) :</string>
-    <string name="avail_rep_total_avail">Total Availability (%) :</string>
-    <string name="avail_rep_true_min_down">True Minute Down (Min) :</string>
-    <string name="avail_rep_isa">Individual Service Availability ISA (%) :</string>
+
+    <string name="avail_rep_total_fail">Total Failure :</string>
+    <string name="avail_rep_total_avail">Availability (%) :</string>
+    <string name="avail_rep_true_min_down">True Minute Down :</string>
+    <string name="avail_rep_isa">ISA (%) :</string>
+
+
 </resources>
