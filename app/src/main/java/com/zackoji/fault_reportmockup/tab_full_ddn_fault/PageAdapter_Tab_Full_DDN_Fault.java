@@ -22,8 +22,8 @@ public class PageAdapter_Tab_Full_DDN_Fault extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
         if (position == 0) return Fragment_Tab_Full_DDN_Fault_M1.newInstance();
-        else if (position == 1) return Fragment_Tab_Fault_M2.newInstance();
-        else if (position == 2) return Fragment_Tab_Fault_M3.newInstance();
+        else if (position == 1) return Fragment_Tab_Full_DDN_Fault_M2.newInstance();
+        else if (position == 2) return Fragment_Tab_Full_DDN_Fault_M3.newInstance();
         return null;
     }
 
