@@ -40,9 +40,9 @@ public class Fragment_Full_DDN_Fault extends Fragment {
         tabLayout.addTab(tabLayout.newTab());
         tabLayout.addTab(tabLayout.newTab());
         tabLayout.addTab(tabLayout.newTab());
-        tabLayout.getTabAt(0).setText(1);
-        tabLayout.getTabAt(1).setText(2);
-        tabLayout.getTabAt(2).setText(3);
+        tabLayout.getTabAt(0).setText("1");
+        tabLayout.getTabAt(1).setText("2");
+        tabLayout.getTabAt(2).setText("3");
         tabLayout.setupWithViewPager(pager_full_ddn_fault);
 
         /**
