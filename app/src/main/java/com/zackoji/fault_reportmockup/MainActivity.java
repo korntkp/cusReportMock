@@ -1,5 +1,6 @@
 package com.zackoji.fault_reportmockup;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.design.widget.CoordinatorLayout;
@@ -29,6 +30,13 @@ public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     LinearLayout fragment_LinearLayout;
     ActionBarDrawerToggle drawerToggle;
+
+
+    Fragment_Full_DDN_Fault fragment_full_ddn_fault = new Fragment_Full_DDN_Fault();
+    Fragment_Full_MPLS_Fault fragment_full_mpls_fault = new Fragment_Full_MPLS_Fault();
+
+    android.support.v4.app.FragmentTransaction fragmentTransaction_full_DDN_Fault;
+    android.support.v4.app.FragmentTransaction fragmentTransaction_full_MPLS_Fault;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,8 +114,24 @@ public class MainActivity extends AppCompatActivity {
                         getSupportActionBar().setTitle("Profile");
                         return true;
 
-                    case R.id.navItem4_Logout:
+                    case R.id.navItem4_DDN_Fault_Full_Rep:
+                        fragmentTransaction_full_DDN_Fault = getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction_full_DDN_Fault.replace(R.id.fragment_layout_main, fragment_full_ddn_fault);
+                        fragmentTransaction_full_DDN_Fault.commit();
+                        getSupportActionBar().setTitle("DDN Fault Full Report");
+                        return true;
+
+                    case R.id.navItem5_MPLS_Fault_Full_Rep:
+                        fragmentTransaction_full_MPLS_Fault = getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction_full_MPLS_Fault.replace(R.id.fragment_layout_main, fragment_full_mpls_fault);
+                        fragmentTransaction_full_MPLS_Fault.commit();
+                        getSupportActionBar().setTitle("MPLS Fault Full Report");
+                        return true;
+
+                    case R.id.navItem6_Logout:
                         //Toast.makeText(getApplicationContext(),"Logout",Toast.LENGTH_SHORT).show();
+//                        sharedPref = getSharedPreferences(Login.PREFNAME, Context.MODE_PRIVATE);
+//                        sharedPref.edit().putBoolean(Login.PREFISREMEM,false).commit();
                         Intent objIntentLogout = new Intent(MainActivity.this, Login.class);
                         startActivity(objIntentLogout);
                         finish();

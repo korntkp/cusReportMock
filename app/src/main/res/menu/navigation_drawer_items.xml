@@ -21,7 +21,17 @@
             android:title="Profile"/>
 
         <item
-            android:id="@+id/navItem4_Logout"
+            android:id="@+id/navItem4_DDN_Fault_Full_Rep"
+            android:icon="@drawable/ic_action_location_found_dark"
+            android:title="Full DDN Fault Report"/>
+
+        <item
+            android:id="@+id/navItem5_MPLS_Fault_Full_Rep"
+            android:icon="@drawable/ic_action_location_found_dark"
+            android:title="Full MPLS Fault Report"/>
+
+        <item
+            android:id="@+id/navItem6_Logout"
             android:icon="@drawable/ic_action_location_found_dark"
             android:title="Logout"/>
 
