@@ -17,6 +17,7 @@
 
             <TextView
                 android:id="@+id/month_fault_m3"
+                android:text="Month 3"
                 android:textSize="30sp"
                 android:layout_marginBottom="10dip"
                 android:layout_width="fill_parent"

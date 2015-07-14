@@ -118,14 +118,14 @@ public class MainActivity extends AppCompatActivity {
                         fragmentTransaction_full_DDN_Fault = getSupportFragmentManager().beginTransaction();
                         fragmentTransaction_full_DDN_Fault.replace(R.id.fragment_layout_main, fragment_full_ddn_fault);
                         fragmentTransaction_full_DDN_Fault.commit();
-                        getSupportActionBar().setTitle("DDN Fault Full Report");
+                        getSupportActionBar().setTitle("Full DDN Fault Report");
                         return true;
 
                     case R.id.navItem5_MPLS_Fault_Full_Rep:
                         fragmentTransaction_full_MPLS_Fault = getSupportFragmentManager().beginTransaction();
                         fragmentTransaction_full_MPLS_Fault.replace(R.id.fragment_layout_main, fragment_full_mpls_fault);
                         fragmentTransaction_full_MPLS_Fault.commit();
-                        getSupportActionBar().setTitle("MPLS Fault Full Report");
+                        getSupportActionBar().setTitle("Full MPLS Fault Report");
                         return true;
 
                     case R.id.navItem6_Logout:
