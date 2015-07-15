@@ -20,6 +20,11 @@ public class Expandable_Adapter_DDN_M1 extends RecyclerView.Adapter<Expandable_A
     private List<Full_DDN_Fault_Report_Model> mReports;
     private Context mContext;
 
+    public Expandable_Adapter_DDN_M1(Context context, List<Full_DDN_Fault_Report_Model> full_ddn_fault_report_models) {
+        mReports = full_ddn_fault_report_models;
+        mContext = context;
+    }
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView textView_no;
         public TextView textView_circuit_id;
