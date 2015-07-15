@@ -47,32 +47,40 @@ public class Fragment_Tab_Full_DDN_Fault_M1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_full_ddn_fault_m1, container, false);
 
-        initAdapter();
+
+
+        /**
+         * ListView Adapter
+         * */
+        //initAdapter();
 
         return rootView;
     }
 
-    private void initAdapter() {
-        ListViewAdapter_Full_DDN_Fault_M1 adapter = new ListViewAdapter_Full_DDN_Fault_M1(
-                getActivity().getApplicationContext(),
-                list_cirID,
-                list_region,
-                list_rcu,
-                list_location,
-                list_down,
-                list_up,
-                list_totaltime,
-                list_truetime,
-                list_cause,
-                list_notes,
-                list_groupcase);
-
-        ListView listView = (ListView)rootView.findViewById(R.id.listView_full_ddn_fault_m1);
-        listView.setAdapter(adapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-
-            }
-        });
-    }
+    /**
+     * ListView Adapter
+     * */
+//    private void initAdapter() {
+//        ListViewAdapter_Full_DDN_Fault_M1 adapter = new ListViewAdapter_Full_DDN_Fault_M1(
+//                getActivity().getApplicationContext(),
+//                list_cirID,
+//                list_region,
+//                list_rcu,
+//                list_location,
+//                list_down,
+//                list_up,
+//                list_totaltime,
+//                list_truetime,
+//                list_cause,
+//                list_notes,
+//                list_groupcase);
+//
+//        ListView listView = (ListView)rootView.findViewById(R.id.listView_full_ddn_fault_m1);
+//        listView.setAdapter(adapter);
+//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+//
+//            }
+//        });
+//    }
 }
