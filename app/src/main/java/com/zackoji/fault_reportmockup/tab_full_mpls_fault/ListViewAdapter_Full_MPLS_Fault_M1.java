@@ -1,11 +1,13 @@
 package com.zackoji.fault_reportmockup.tab_full_mpls_fault;
 
 import android.content.Context;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+//import android.support.v7.widget.RecyclerView;
 
 import com.zackoji.fault_reportmockup.R;
 
@@ -26,6 +28,7 @@ public class ListViewAdapter_Full_MPLS_Fault_M1 extends BaseAdapter {
     String[] cause;
     String[] notes;
     String[] groupcase;
+    
 
     public ListViewAdapter_Full_MPLS_Fault_M1(Context mContext, String[] circuit_id, String[] region, String[] rcu, String[] location, String[] downtime, String[] uptime, String[] totaltime, String[] truetime, String[] cause, String[] notes, String[] groupcase) {
         this.mContext = mContext;
@@ -68,8 +71,6 @@ public class ListViewAdapter_Full_MPLS_Fault_M1 extends BaseAdapter {
 
         if(convertView == null)
             convertView = mInflater.inflate(R.layout.listview_full_mpls_fault_m1, parent, false);
-
-
 
         TextView textView_no = (TextView)convertView.findViewById(R.id.full_mpls_fault_no_m1);
         textView_no.setText("Event No. " + (position+1));

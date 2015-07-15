@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -38,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
     android.support.v4.app.FragmentTransaction fragmentTransaction_full_DDN_Fault;
     android.support.v4.app.FragmentTransaction fragmentTransaction_full_MPLS_Fault;
 
+    LinearLayout linearLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +55,21 @@ public class MainActivity extends AppCompatActivity {
         initToolbar();
         initInstances();
         initFragment();
+//        Toast.makeText(this, "hello", Toast.LENGTH_LONG).show();
+//        linearLayout = (LinearLayout) findViewById(R.id.link_to_full_ddn_fault_m1);
+//        linearLayout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+////                fragmentTransaction_full_DDN_Fault = getSupportFragmentManager().beginTransaction();
+////                fragmentTransaction_full_DDN_Fault = getSupportFragmentManager().beginTransaction();
+////                fragmentTransaction_full_DDN_Fault.replace(R.id.fragment_layout_main, fragment_full_ddn_fault);
+////                fragmentTransaction_full_DDN_Fault.commit();
+////                getSupportActionBar().setTitle("Full DDN Fault Report");
+//////                getSupportActionBar().setTitle("Full DDN Fault Report");
+//                Log.i("lkjkj", "uhgfyh");
+//            }
+//        });
 
     }
 

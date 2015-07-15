@@ -32,6 +32,7 @@
             <!-- DDN Fault Report -->
 
             <LinearLayout
+                android:id="@+id/link_to_full_ddn_fault_m1"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/summary_shape"
