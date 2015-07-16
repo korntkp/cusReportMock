@@ -17,14 +17,21 @@ import java.util.List;
  */
 public class RecyclerView_Adapter_DDN_M1 extends RecyclerView.Adapter<RecyclerView_Adapter_DDN_M1.ViewHolder> {
 
-    private List<Full_DDN_Fault_Report_Model> mReports;
     private Context mContext;
+    private List<Full_DDN_Fault_Report_Model> mReports;
 
+    /**
+     * Constructor (getActivity(), dataModel)
+     * */
     public RecyclerView_Adapter_DDN_M1(Context context, List<Full_DDN_Fault_Report_Model> full_ddn_fault_report_models) {
-        mReports = full_ddn_fault_report_models;
         mContext = context;
+        mReports = full_ddn_fault_report_models;
     }
 
+    /**
+     * Inner Class
+     * Bind with View
+     * */
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView textView_no;
         public TextView textView_circuit_id;
@@ -39,6 +46,12 @@ public class RecyclerView_Adapter_DDN_M1 extends RecyclerView.Adapter<RecyclerVi
         }
     }
 
+    /**
+     * Create & Return ViewHolder
+     * if(view == null) will create ViewHolder
+     *
+     * Create new views (invoked by the layout manager)
+     * */
     @Override
     public RecyclerView_Adapter_DDN_M1.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(mContext)
@@ -48,6 +61,17 @@ public class RecyclerView_Adapter_DDN_M1 extends RecyclerView.Adapter<RecyclerVi
         return viewHolder;
     }
 
+    /**
+     * Set Value Dataset
+     * setText() blah blah...
+     *
+     * พอ Scroll ถึงจุดที่ต้องใช้แล้วยังมี View เหลือเก็บไว้ ก็จะเอาสิ่งนั้นโยนให้ onBindViewHolder ไปยัดค่าทันที
+     * (http://nuuneoi.com/blog/blog.php?read_id=758)
+     *
+     * Replace the contents of a view (invoked by the layout manager)
+     * - get element from your dataset at this position
+     * - replace the contents of the view with that element
+     * */
     @Override
     public void onBindViewHolder(RecyclerView_Adapter_DDN_M1.ViewHolder holder, int position) {
         Full_DDN_Fault_Report_Model report = mReports.get(position);
@@ -57,6 +81,9 @@ public class RecyclerView_Adapter_DDN_M1 extends RecyclerView.Adapter<RecyclerVi
         holder.textView_region.setText(report.getRegion());
     }
 
+    /**
+     * Return the size of Dataset (invoked by the layout manager)
+     * */
     @Override
     public int getItemCount() {
         return mReports.size();

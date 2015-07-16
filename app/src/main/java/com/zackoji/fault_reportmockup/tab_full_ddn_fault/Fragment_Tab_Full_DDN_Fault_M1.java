@@ -54,13 +54,25 @@ public class Fragment_Tab_Full_DDN_Fault_M1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_full_ddn_fault_m1, container, false);
 
+        /**
+         * Bind View
+         * */
         mRecyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view_full_ddn_fault_m1);
 
+        /**
+         *
+         * */
         mRecyclerView.setHasFixedSize(true);
 
+        /**
+         * Set LinearLayoutManager
+         * */
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
 
+        /**
+         * Create & Set RecyclerView Adapter
+         * */
         mAdapter = new RecyclerView_Adapter_DDN_M1(getActivity(), initData());
 //        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setAdapter(mAdapter);

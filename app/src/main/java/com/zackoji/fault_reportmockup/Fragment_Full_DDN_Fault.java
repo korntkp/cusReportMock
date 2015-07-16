@@ -48,9 +48,9 @@ public class Fragment_Full_DDN_Fault extends Fragment {
         tabLayout.addTab(tabLayout.newTab());
         tabLayout.addTab(tabLayout.newTab());
         tabLayout.setupWithViewPager(pager_full_ddn_fault);
-        tabLayout.getTabAt(0).setText("Month 1");
-        tabLayout.getTabAt(1).setText("Month 2");
-        tabLayout.getTabAt(2).setText("Month 3");
+        tabLayout.getTabAt(0).setText("Recycler View");
+        tabLayout.getTabAt(1).setText("ListView1");
+        tabLayout.getTabAt(2).setText("ListView2");
 
         /**
          * Dynamic Month Tab's name
