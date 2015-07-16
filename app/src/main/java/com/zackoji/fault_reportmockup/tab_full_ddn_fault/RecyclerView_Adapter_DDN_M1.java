@@ -1,6 +1,7 @@
 package com.zackoji.fault_reportmockup.tab_full_ddn_fault;
 
 import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,13 +34,14 @@ public class RecyclerView_Adapter_DDN_M1 extends RecyclerView.Adapter<RecyclerVi
      * Bind with View
      * */
     public static class ViewHolder extends RecyclerView.ViewHolder {
+        CardView cv;
         public TextView textView_no;
         public TextView textView_circuit_id;
         public TextView textView_region;
 
         public ViewHolder(View view) {
             super(view);
-
+            cv = (CardView)itemView.findViewById(R.id.cv1);
             textView_no = (TextView) view.findViewById(R.id.full_ddn_fault_no_m1);
             textView_circuit_id  = (TextView) view.findViewById(R.id.full_ddn_fault_cir_id_m1);
             textView_region  = (TextView) view.findViewById(R.id.full_ddn_fault_region_m1);
@@ -89,5 +91,9 @@ public class RecyclerView_Adapter_DDN_M1 extends RecyclerView.Adapter<RecyclerVi
         return mReports.size();
     }
 
+    @Override
+    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
+    }
 
 }
