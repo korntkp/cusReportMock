@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.zackoji.fault_reportmockup.R;
 import com.zackoji.fault_reportmockup.model.Full_DDN_Fault_Report_Model;
@@ -60,6 +61,22 @@ public class RecyclerView_Adapter_DDN_M1 extends RecyclerView.Adapter<RecyclerVi
                 .inflate(R.layout.listview_full_ddn_fault_m1, parent, false);
 
         ViewHolder viewHolder = new ViewHolder(view);
+
+//        view.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(mContext, "WOWW", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//        view.setOnClickListener(new RecyclerItemClickListener
+//                (mContext, new RecyclerItemClickListener.OnItemClickListener()
+//                    {@Override public void onItemClick(View view, int position)
+//                        {
+//                            // do whatever
+//                        }
+//                    }
+//                )
+//        );
         return viewHolder;
     }
 
@@ -78,7 +95,7 @@ public class RecyclerView_Adapter_DDN_M1 extends RecyclerView.Adapter<RecyclerVi
     public void onBindViewHolder(RecyclerView_Adapter_DDN_M1.ViewHolder holder, int position) {
         Full_DDN_Fault_Report_Model report = mReports.get(position);
         holder.cv.setContentPadding(20,10,5,5);
-        holder.textView_no.setText("No.1");
+        holder.textView_no.setText("Event No. " + (position+1));
         holder.textView_circuit_id.setText(report.getCirID());
         holder.textView_region.setText(report.getRegion());
     }

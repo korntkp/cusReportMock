@@ -3,11 +3,13 @@ package com.zackoji.fault_reportmockup.tab_full_ddn_fault;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.zackoji.fault_reportmockup.R;
 import com.zackoji.fault_reportmockup.model.Full_DDN_Fault_Report_Model;
@@ -74,8 +76,18 @@ public class Fragment_Tab_Full_DDN_Fault_M1 extends Fragment {
          * Create & Set RecyclerView Adapter
          * */
         mAdapter = new RecyclerView_Adapter_DDN_M1(getActivity(), initData());
-//        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setAdapter(mAdapter);
+
+        RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view_full_ddn_fault_m1);
+        recyclerView.addOnItemTouchListener(
+                new RecyclerItemClickListener(getActivity(), new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position) {
+                        Toast.makeText(getActivity(), "asdf", Toast.LENGTH_SHORT).show();;
+                    }
+                })
+        );
 
 
 
