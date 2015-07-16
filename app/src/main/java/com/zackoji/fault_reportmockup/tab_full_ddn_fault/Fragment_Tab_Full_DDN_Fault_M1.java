@@ -8,8 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ListView;
 
 import com.zackoji.fault_reportmockup.R;
 import com.zackoji.fault_reportmockup.model.Full_DDN_Fault_Report_Model;
@@ -63,7 +61,7 @@ public class Fragment_Tab_Full_DDN_Fault_M1 extends Fragment {
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        mAdapter = new Expandable_Adapter_DDN_M1(getActivity(), initData());
+        mAdapter = new RecyclerView_Adapter_DDN_M1(getActivity(), initData());
 //        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setAdapter(mAdapter);
 
@@ -86,7 +84,7 @@ public class Fragment_Tab_Full_DDN_Fault_M1 extends Fragment {
         for (int i = 0; i < n; i++){
             dateset.add(datas[i]);
         }
-        
+
         return dateset;
     }
 

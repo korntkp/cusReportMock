@@ -15,12 +15,12 @@ import java.util.List;
 /**
  * Created by Zackoji on 15/7/2558.
  */
-public class Expandable_Adapter_DDN_M1 extends RecyclerView.Adapter<Expandable_Adapter_DDN_M1.ViewHolder> {
+public class RecyclerView_Adapter_DDN_M1 extends RecyclerView.Adapter<RecyclerView_Adapter_DDN_M1.ViewHolder> {
 
     private List<Full_DDN_Fault_Report_Model> mReports;
     private Context mContext;
 
-    public Expandable_Adapter_DDN_M1(Context context, List<Full_DDN_Fault_Report_Model> full_ddn_fault_report_models) {
+    public RecyclerView_Adapter_DDN_M1(Context context, List<Full_DDN_Fault_Report_Model> full_ddn_fault_report_models) {
         mReports = full_ddn_fault_report_models;
         mContext = context;
     }
@@ -40,7 +40,7 @@ public class Expandable_Adapter_DDN_M1 extends RecyclerView.Adapter<Expandable_A
     }
 
     @Override
-    public Expandable_Adapter_DDN_M1.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RecyclerView_Adapter_DDN_M1.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(mContext)
                 .inflate(R.layout.listview_full_ddn_fault_m1, parent, false);
 
@@ -49,13 +49,12 @@ public class Expandable_Adapter_DDN_M1 extends RecyclerView.Adapter<Expandable_A
     }
 
     @Override
-    public void onBindViewHolder(Expandable_Adapter_DDN_M1.ViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerView_Adapter_DDN_M1.ViewHolder holder, int position) {
         Full_DDN_Fault_Report_Model report = mReports.get(position);
 
         holder.textView_no.setText("No.1");
         holder.textView_circuit_id.setText(report.getCirID());
         holder.textView_region.setText(report.getRegion());
-
     }
 
     @Override
