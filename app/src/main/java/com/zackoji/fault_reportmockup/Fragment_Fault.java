@@ -17,8 +17,6 @@ import com.zackoji.fault_reportmockup.tab_fault.PageAdapter_Tab_Fault;
  */
 public class Fragment_Fault extends Fragment {
 
-    TextView username_TextV;
-    //String username = "test2";
     TabLayout tabLayout;
     ViewPager pager_fault;
     PageAdapter_Tab_Fault adapter_tab_fault;
@@ -45,23 +43,4 @@ public class Fragment_Fault extends Fragment {
 
         return rootView;
     }
-
-/*
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_fault_report);
-
-        Intent intent = getIntent();
-        String username = intent.getStringExtra("UsernameFault");
-        username_TextV = (TextView) findViewById(R.id.fault_username);
-        username_TextV.setText(username);
-    }
-
-    public void logout(View view) {
-        Intent objIntentLogout = new Intent(Fragment_Fault.this, Login.class);
-        startActivity(objIntentLogout);
-        finish();
-    }
-    */
 }

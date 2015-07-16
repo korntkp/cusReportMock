@@ -38,13 +38,7 @@ public class Fragment_Tab_Fault_M1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_fault_m1, container, false);
 
-//        Button bn = (Button) rootView.findViewById(R.id.gogogo);
-//        bn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(getActivity(), "asdf", Toast.LENGTH_LONG).show();
-//            }
-//        });
+
 
 //        linearLayout = (LinearLayout) rootView.findViewById(R.id.link_to_full_ddn_fault_m1);
 //        linearLayout.setOnClickListener(new View.OnClickListener() {

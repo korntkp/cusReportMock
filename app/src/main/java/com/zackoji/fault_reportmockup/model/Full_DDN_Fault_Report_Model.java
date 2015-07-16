@@ -104,6 +104,36 @@ public class Full_DDN_Fault_Report_Model {
         this.groupcase = groupcase;
     }
 
+    public Full_DDN_Fault_Report_Model() {
+        this.cirID = "TEXT1234234";
+        this.region = "region 123";
+
+        this.rcu = "I see U asdf";
+        this.location = "";
+        this.down = "";
+        this.up = "";
+        this.totaltime = "";
+        this.truetime = "";
+        this.cause = "";
+        this.notes = "";
+        this.groupcase = "";
+    }
+
+    public Full_DDN_Fault_Report_Model(String cirID) {
+        this.cirID = cirID;
+        this.region = "region 123";
+
+        this.rcu = "I see U asdf";
+        this.location = "";
+        this.down = "";
+        this.up = "";
+        this.totaltime = "";
+        this.truetime = "";
+        this.cause = "";
+        this.notes = "";
+        this.groupcase = "";
+    }
+
     public Full_DDN_Fault_Report_Model(String cirID, String region, String rcu, String location, String down, String up, String totaltime, String truetime, String cause, String notes, String groupcase) {
         this.cirID = cirID;
         this.region = region;
