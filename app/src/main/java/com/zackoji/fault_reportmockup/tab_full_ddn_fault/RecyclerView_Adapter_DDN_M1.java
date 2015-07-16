@@ -34,7 +34,7 @@ public class RecyclerView_Adapter_DDN_M1 extends RecyclerView.Adapter<RecyclerVi
      * Bind with View
      * */
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        CardView cv;
+        public CardView cv;
         public TextView textView_no;
         public TextView textView_circuit_id;
         public TextView textView_region;
@@ -77,7 +77,7 @@ public class RecyclerView_Adapter_DDN_M1 extends RecyclerView.Adapter<RecyclerVi
     @Override
     public void onBindViewHolder(RecyclerView_Adapter_DDN_M1.ViewHolder holder, int position) {
         Full_DDN_Fault_Report_Model report = mReports.get(position);
-
+        holder.cv.setContentPadding(20,10,5,5);
         holder.textView_no.setText("No.1");
         holder.textView_circuit_id.setText(report.getCirID());
         holder.textView_region.setText(report.getRegion());
