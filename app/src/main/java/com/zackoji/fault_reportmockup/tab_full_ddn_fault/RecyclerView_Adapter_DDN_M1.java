@@ -61,21 +61,6 @@ public class RecyclerView_Adapter_DDN_M1 extends RecyclerView.Adapter<RecyclerVi
 
         ViewHolder viewHolder = new ViewHolder(view);
 
-//        view.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(mContext, "WOWW", Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//        view.setOnClickListener(new RecyclerItemClickListener
-//                (mContext, new RecyclerItemClickListener.OnItemClickListener()
-//                    {@Override public void onItemClick(View view, int position)
-//                        {
-//                            // do whatever
-//                        }
-//                    }
-//                )
-//        );
         return viewHolder;
     }
 

@@ -23,23 +23,11 @@ import java.util.List;
 public class Fragment_Tab_Full_DDN_Fault_M2 extends Fragment{
 
     View rootView;
-
+    ListView listView;
     /**
      * Test Data
      * */
-//    String[] list_cirID = { "B03298B123", "B03299B321" };
-//    String[] list_region = { "R2", "R2" };
-//    String[] list_rcu = { "CWT-04", "CWT-04" };
-//    String[] list_location = { "lovation a", "dest b" };
-//    String[] list_down = { "04/01/2015 09:38", "04/01/2015 09:38" };
-//    String[] list_up = { "04/01/2015 20:29", "04/01/2015 20:29" };
-//    String[] list_totaltime = { "10.51", "10.51" };
-//    String[] list_truetime = { "0.0", "0.0" };
-//    String[] list_cause = { "-", "-" };
-//    String[] list_notes = { "-", "-" };
-//    String[] list_groupcase = { "Customer", "Customer" };
     int n = 1000;
-
     String[] list_cirID = new String[n];
     String[] list_region = new String[n];
     String[] list_rcu  = new String[n];
@@ -72,7 +60,6 @@ public class Fragment_Tab_Full_DDN_Fault_M2 extends Fragment{
     }
 
     private void initData() {
-
         for (int i = 0; i < n; i++){
             list_cirID[i] = "B03298B123"+i;
             list_region[i] = "list_region"+i;
@@ -85,12 +72,6 @@ public class Fragment_Tab_Full_DDN_Fault_M2 extends Fragment{
             list_notes[i] = "list_notes"+n;
             list_groupcase[i] = "list_groupcase"+n;
         }
-
-
-//        List<Full_DDN_Fault_Report_Model> dateset = new ArrayList<>();
-//        for (int i = 0; i < n; i++){
-//            dateset.add(datas[i]);
-//        }
     }
 
     private void initAdapter() {
@@ -108,11 +89,12 @@ public class Fragment_Tab_Full_DDN_Fault_M2 extends Fragment{
                 list_notes,
                 list_groupcase);
 
-        ListView listView = (ListView)rootView.findViewById(R.id.listView_full_ddn_fault_m2);
+        listView = (ListView)rootView.findViewById(R.id.listView_full_ddn_fault_m2);
 
-        /**
-         * Fast Scroll
-         * */
+//        fastScroll();
+/**
+ * Fast Scroll
+ * */
         listView.setOnScrollListener(new AbsListView.OnScrollListener() {
             private static final int DELAY = 400;
             private AbsListView view;
@@ -148,6 +130,38 @@ public class Fragment_Tab_Full_DDN_Fault_M2 extends Fragment{
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 
             }
+        });
+    }
+
+    private void fastScroll() {
+        /**
+         * Fast Scroll
+         * */
+        listView.setOnScrollListener(new AbsListView.OnScrollListener() {
+            private static final int DELAY = 400;
+            private AbsListView view;
+            @Override
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
+                if (scrollState != SCROLL_STATE_IDLE) {
+                    view.setFastScrollAlwaysVisible(true);
+                    handler.removeCallbacks(runnable);
+                }
+                else {
+                    this.view = view;
+                    handler.postDelayed(runnable, DELAY);
+                }
+            }
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+            }
+            private Handler handler = new Handler();
+            private Runnable runnable = new Runnable() {
+                @Override
+                public void run() {
+                    view.setFastScrollAlwaysVisible(false);
+                    view = null;
+                }
+            };
         });
     }
 }

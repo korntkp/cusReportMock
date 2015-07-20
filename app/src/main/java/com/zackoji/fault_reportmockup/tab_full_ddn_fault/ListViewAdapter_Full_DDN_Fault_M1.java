@@ -12,7 +12,7 @@ import com.zackoji.fault_reportmockup.R;
 /**
  * Created by Zackoji on 13/7/2558.
  */
-public class OLD_ListViewAdapter_Full_DDN_Fault_M1 extends BaseAdapter {
+public class ListViewAdapter_Full_DDN_Fault_M1 extends BaseAdapter {
 
     Context mContext;
     String[] circuit_id;
@@ -27,7 +27,7 @@ public class OLD_ListViewAdapter_Full_DDN_Fault_M1 extends BaseAdapter {
     String[] notes;
     String[] groupcase;
 
-    public OLD_ListViewAdapter_Full_DDN_Fault_M1(Context mContext, String[] circuit_id, String[] region, String[] rcu, String[] location, String[] downtime, String[] uptime, String[] totaltime, String[] truetime, String[] cause, String[] notes, String[] groupcase) {
+    public ListViewAdapter_Full_DDN_Fault_M1(Context mContext, String[] circuit_id, String[] region, String[] rcu, String[] location, String[] downtime, String[] uptime, String[] totaltime, String[] truetime, String[] cause, String[] notes, String[] groupcase) {
         this.mContext = mContext;
         this.circuit_id = circuit_id;
         this.region = region;

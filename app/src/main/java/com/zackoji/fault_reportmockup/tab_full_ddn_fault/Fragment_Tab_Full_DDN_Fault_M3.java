@@ -1,11 +1,13 @@
 package com.zackoji.fault_reportmockup.tab_full_ddn_fault;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
@@ -17,21 +19,22 @@ import com.zackoji.fault_reportmockup.R;
 public class Fragment_Tab_Full_DDN_Fault_M3 extends Fragment {
 
     View rootView;
-
+    ListView listView;
     /**
      * Test Data
      * */
-    String[] list_cirID = { "B03298B456", "B03299B654" };
-    String[] list_region = { "R2", "R2" };
-    String[] list_rcu = { "CWT-04", "CWT-04" };
-    String[] list_location = { "asdf ", "fdsa" };
-    String[] list_down = { "04/01/2015 09:38", "04/01/2015 09:38" };
-    String[] list_up = { "04/01/2015 20:29", "04/01/2015 20:29" };
-    String[] list_totaltime = { "10.51", "10.51" };
-    String[] list_truetime = { "0.0", "0.0" };
-    String[] list_cause = { "= =", "- -" };
-    String[] list_notes = { "+", "+" };
-    String[] list_groupcase = { "Customer", "Customer" };
+    int n = 1000;
+    String[] list_cirID = new String[n];
+    String[] list_region = new String[n];
+    String[] list_rcu  = new String[n];
+    String[] list_location = new String[n];
+    String[] list_down = new String[n];
+    String[] list_up = new String[n];
+    String[] list_totaltime = new String[n];
+    String[] list_truetime = new String[n];
+    String[] list_cause = new String[n];
+    String[] list_notes = new String[n];
+    String[] list_groupcase = new String[n];
 
     public static Fragment_Tab_Full_DDN_Fault_M3 newInstance() {
         Fragment_Tab_Full_DDN_Fault_M3 fragment = new Fragment_Tab_Full_DDN_Fault_M3();
@@ -46,10 +49,25 @@ public class Fragment_Tab_Full_DDN_Fault_M3 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_full_ddn_fault_m3, container, false);
-
+        initData();
         initAdapter();
 
         return rootView;
+    }
+
+    private void initData() {
+        for (int i = 0; i < n; i++){
+            list_cirID[i] = "B03298B123"+i;
+            list_region[i] = "list_region"+i;
+            list_rcu[i] = "list_rcu"+i;
+            list_down[i] = "list_down"+i;
+            list_up[i] = "list_up"+i;
+            list_totaltime[i] = "list_totaltime"+i;
+            list_truetime[i] = "list_truetime"+n;
+            list_cause[i] = "list_cause"+n;
+            list_notes[i] = "list_notes"+n;
+            list_groupcase[i] = "list_groupcase"+n;
+        }
     }
 
     private void initAdapter() {
@@ -66,12 +84,76 @@ public class Fragment_Tab_Full_DDN_Fault_M3 extends Fragment {
                 list_cause,
                 list_notes,
                 list_groupcase);
-        ListView listView = (ListView)rootView.findViewById(R.id.listView_full_ddn_fault_m3);
+        listView = (ListView)rootView.findViewById(R.id.listView_full_ddn_fault_m3);
+
+//        fastScroll();
+/**
+ * Fast Scroll
+ * */
+        listView.setOnScrollListener(new AbsListView.OnScrollListener() {
+            private static final int DELAY = 400;
+            private AbsListView view;
+            @Override
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
+                if (scrollState != SCROLL_STATE_IDLE) {
+                    view.setFastScrollAlwaysVisible(true);
+                    handler.removeCallbacks(runnable);
+                }
+                else {
+                    this.view = view;
+                    handler.postDelayed(runnable, DELAY);
+                }
+            }
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+            }
+            private Handler handler = new Handler();
+            private Runnable runnable = new Runnable() {
+                @Override
+                public void run() {
+                    view.setFastScrollAlwaysVisible(false);
+                    view = null;
+                }
+            };
+        });
+
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 
             }
+        });
+    }
+
+    private void fastScroll() {
+        /**
+         * Fast Scroll
+         * */
+        listView.setOnScrollListener(new AbsListView.OnScrollListener() {
+            private static final int DELAY = 400;
+            private AbsListView view;
+            @Override
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
+                if (scrollState != SCROLL_STATE_IDLE) {
+                    view.setFastScrollAlwaysVisible(true);
+                    handler.removeCallbacks(runnable);
+                }
+                else {
+                    this.view = view;
+                    handler.postDelayed(runnable, DELAY);
+                }
+            }
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+            }
+            private Handler handler = new Handler();
+            private Runnable runnable = new Runnable() {
+                @Override
+                public void run() {
+                    view.setFastScrollAlwaysVisible(false);
+                    view = null;
+                }
+            };
         });
     }
 }

@@ -4,10 +4,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.zackoji.fault_reportmockup.tab_fault.Fragment_Tab_Fault_M1;
-import com.zackoji.fault_reportmockup.tab_fault.Fragment_Tab_Fault_M2;
-import com.zackoji.fault_reportmockup.tab_fault.Fragment_Tab_Fault_M3;
-
 /**
  * Created by Zackoji on 13/7/2558.
  */
