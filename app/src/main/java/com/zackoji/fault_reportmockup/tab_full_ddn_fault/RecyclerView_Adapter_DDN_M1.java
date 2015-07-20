@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.zackoji.fault_reportmockup.R;
 import com.zackoji.fault_reportmockup.model.Full_DDN_Fault_Report_Model;
@@ -58,7 +57,7 @@ public class RecyclerView_Adapter_DDN_M1 extends RecyclerView.Adapter<RecyclerVi
     @Override
     public RecyclerView_Adapter_DDN_M1.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(mContext)
-                .inflate(R.layout.listview_full_ddn_fault_m1, parent, false);
+                .inflate(R.layout.item_full_ddn_fault_m1, parent, false);
 
         ViewHolder viewHolder = new ViewHolder(view);
 
@@ -112,5 +111,7 @@ public class RecyclerView_Adapter_DDN_M1 extends RecyclerView.Adapter<RecyclerVi
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);
     }
+
+
 
 }

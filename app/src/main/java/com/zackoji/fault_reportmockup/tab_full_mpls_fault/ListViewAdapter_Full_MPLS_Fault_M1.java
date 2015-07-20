@@ -1,7 +1,6 @@
 package com.zackoji.fault_reportmockup.tab_full_mpls_fault;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -70,7 +69,7 @@ public class ListViewAdapter_Full_MPLS_Fault_M1 extends BaseAdapter {
                 (LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         if(convertView == null)
-            convertView = mInflater.inflate(R.layout.listview_full_mpls_fault_m1, parent, false);
+            convertView = mInflater.inflate(R.layout.item_full_mpls_fault_m1, parent, false);
 
         TextView textView_no = (TextView)convertView.findViewById(R.id.full_mpls_fault_no_m1);
         textView_no.setText("Event No. " + (position+1));

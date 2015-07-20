@@ -66,6 +66,8 @@ public class Fragment_Tab_Full_DDN_Fault_M1 extends Fragment {
          * */
         mRecyclerView.setHasFixedSize(true);
 
+//        mRecyclerView.setScr
+
         /**
          * Set LinearLayoutManager
          * */

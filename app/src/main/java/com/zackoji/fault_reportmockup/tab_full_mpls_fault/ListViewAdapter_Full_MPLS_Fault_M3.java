@@ -63,7 +63,7 @@ public class ListViewAdapter_Full_MPLS_Fault_M3 extends BaseAdapter {
                 (LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         if(convertView == null)
-            convertView = mInflater.inflate(R.layout.listview_full_mpls_fault_m3, parent, false);
+            convertView = mInflater.inflate(R.layout.itemfull_mpls_fault_m3, parent, false);
 
         TextView textView_no = (TextView)convertView.findViewById(R.id.full_mpls_fault_no_m3);
         textView_no.setText("Event No. " + (position+1));

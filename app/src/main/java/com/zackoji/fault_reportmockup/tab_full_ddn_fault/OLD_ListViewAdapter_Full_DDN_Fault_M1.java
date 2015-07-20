@@ -67,7 +67,7 @@ public class OLD_ListViewAdapter_Full_DDN_Fault_M1 extends BaseAdapter {
                 (LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         if(convertView == null)
-            convertView = mInflater.inflate(R.layout.listview_full_ddn_fault_m1, parent, false);
+            convertView = mInflater.inflate(R.layout.item_full_ddn_fault_m1, parent, false);
 
         TextView textView_no = (TextView)convertView.findViewById(R.id.full_ddn_fault_no_m1);
         textView_no.setText("Event No. " + (position+1));
