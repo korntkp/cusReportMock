@@ -1,11 +1,13 @@
 package com.zackoji.fault_reportmockup.tab_full_ddn_fault;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
@@ -107,9 +109,40 @@ public class Fragment_Tab_Full_DDN_Fault_M2 extends Fragment{
                 list_groupcase);
 
         ListView listView = (ListView)rootView.findViewById(R.id.listView_full_ddn_fault_m2);
-        listView.setFastScrollEnabled(true);
-//        listView.getScrol
-//        listView.setFastScrollAlwaysVisible(true);
+
+        /**
+         * Fast Scroll
+         * */
+        listView.setOnScrollListener(new AbsListView.OnScrollListener() {
+            private static final int DELAY = 400;
+            private AbsListView view;
+            @Override
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
+                if (scrollState != SCROLL_STATE_IDLE) {
+                    view.setFastScrollAlwaysVisible(true);
+                    handler.removeCallbacks(runnable);
+                }
+                else {
+                    this.view = view;
+                    handler.postDelayed(runnable, DELAY);
+                }
+            }
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+            }
+            private Handler handler = new Handler();
+            private Runnable runnable = new Runnable() {
+                @Override
+                public void run() {
+                    view.setFastScrollAlwaysVisible(false);
+                    view = null;
+                }
+            };
+        });
+
+        /**
+         * Set Adapter
+         * */
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
