@@ -79,15 +79,15 @@ public class Fragment_Tab_Full_DDN_Fault_M1 extends Fragment {
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setAdapter(mAdapter);
 
-        RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view_full_ddn_fault_m1);
-        recyclerView.addOnItemTouchListener(
-                new RecyclerItemClickListener(getActivity(), new RecyclerItemClickListener.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(View view, int position) {
-                        Toast.makeText(getActivity(), "asdf", Toast.LENGTH_SHORT).show();;
-                    }
-                })
-        );
+//        RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view_full_ddn_fault_m1);
+//        recyclerView.addOnItemTouchListener(
+//                new RecyclerItemClickListener(getActivity(), new RecyclerItemClickListener.OnItemClickListener() {
+//                    @Override
+//                    public void onItemClick(View view, int position) {
+//                        Toast.makeText(getActivity(), "asdf", Toast.LENGTH_SHORT).show();;
+//                    }
+//                })
+//        );
 
 
 

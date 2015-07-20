@@ -234,4 +234,13 @@ public class MainActivity extends AppCompatActivity {
         //objIntent1.putExtra("UsernameFault", usernameFault);
         startActivity(objIntent1);
     }
+
+    public void goFullDDN_M1(View view) {
+        fragmentTransaction_full_DDN_Fault = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction_full_DDN_Fault.replace(R.id.fragment_layout_main, fragment_full_ddn_fault);
+        fragmentTransaction_full_DDN_Fault.commit();
+        getSupportActionBar().setTitle("Full DDN Fault Report");
+        navigationView.getMenu().getItem(0).setChecked(false);
+        navigationView.getMenu().getItem(3).setChecked(true);
+    }
 }
